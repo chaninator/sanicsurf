@@ -16,9 +16,18 @@ img {
   background-color: gold;
 }
 
+.sanic-select-mobile {
+  display: none;
+}
+
 .sanic-display {
   border: 10px solid blue;
-  height: 500px;
+  text-align: center;
+  color: white;
+}
+
+.show {
+  display:block!important;
 }
 
 .character-select {
@@ -43,7 +52,7 @@ img {
   align-items: center;
   justify-content: center;
   color: blue;
-  font-family: 'Paytone One';
+  /*font-family: 'Paytone One';
   text-transform: uppercase;
   letter-spacing: -2px;
   margin: 11px 0 17px 0;
@@ -51,5 +60,53 @@ img {
   line-height: 80px;
   color: blue;
   text-shadow: 0 13.36px 8.896px gold,0 -10px 5px black;
-  letter-spacing: -4px;
+  letter-spacing: -4px;*/
+}
+
+.sanic-profile {
+  height: 200px;
+  padding-top: 30px;
+}
+
+.sanic:hover{
+  background-color: #FF0000;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  animation: rainbow .1s infinite;
+}
+
+@keyframes rainbow {
+    /* set your colors and when they should occur here */
+    0%, 100% { background-color: #FF0000; }
+    16.66% { background-color: #FFFF00; }
+    33.33% { background-color: #00FF00; }
+    50% { background-color: #00FFFF; }
+    66.66% { background-color: #0000FF; }
+    83.33% { background-color: #FF00FF; }
+}
+
+@media (max-width: 800px) {
+  .sanic-display {
+    display: none;
+  }
+
+  .sanic-select {
+    display: none;
+  }
+
+  .sanic-select-mobile {
+    display: block;
+    margin: 0;
+  }
+
+  .sanic {
+    border: 5px solid blue;
+    height: 150px;
+    max-width: 150px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
 }
