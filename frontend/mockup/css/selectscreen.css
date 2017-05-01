@@ -1,0 +1,55 @@
+body {
+  background-image: url(http://orig01.deviantart.net/98e1/f/2012/363/6/1/sonic_green_hill_zone_blocks_background____free_by_derpychii-d5pkdal.png);
+}
+
+img {
+  max-width: 100%;
+}
+
+.sanic-select {
+  border: 10px solid blue;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+  background-color: gold;
+}
+
+.sanic-display {
+  border: 10px solid blue;
+  height: 500px;
+}
+
+.character-select {
+  display:flex;
+  flex-direction:row;
+  margin-top: 100px;
+}
+
+.sanic {
+  border: 5px solid blue;
+  height: 150px;
+  max-width: 150px;
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.sanic-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+  font-family: 'Paytone One';
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin: 11px 0 17px 0;
+  font-size: 100px;
+  line-height: 80px;
+  color: blue;
+  text-shadow: 0 13.36px 8.896px gold,0 -10px 5px black;
+  letter-spacing: -4px;
+}
