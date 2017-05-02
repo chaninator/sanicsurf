@@ -3,7 +3,7 @@ module.exports = function(server){
   //var Votes = require('./models/Votes')
 
   // this will be the domain where our frontend is located
-  url = 'http://localhost:5001'
+  url = 'http://localhost:4000'
 
   var io = require('socket.io')(server, {origins: url});
 
@@ -17,6 +17,11 @@ module.exports = function(server){
   }
 
   io.on('connection', function(socket){
+    socket.on('hello', function() {
+      console.log('User connected')
+    })
+
+    io.emit('start')
 
     // if admin sends start, broadcast start to others connected
     socket.on('start', function(){
@@ -27,10 +32,8 @@ module.exports = function(server){
     socket.on('vote', function(vote){
       // save the vote to the DB, then call updateVotes()
       // to send everything as an update
-
       //Votes.save(vote)
       updateVotes()
-
     })
 
     // when admin declares complete, send everybody results
