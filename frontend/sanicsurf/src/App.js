@@ -11,29 +11,12 @@ import {
 import './App.css'
 
 class App extends Component {
-  addNum(){
-    this.setState={
-
-    }
-  }
-
-  constructor(props){
-  super(props);
-  this.state = {
-    query: '',
-    artist: 'WEEKND',
-    vote: 0
-  }
-
-
-
-}
-
   constructor(props) {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      vote: 0
     }
   }
 
@@ -46,6 +29,12 @@ class App extends Component {
         this.setState({ currentUser: null });
       }
     });
+  }
+
+  addNum(num){
+    this.setState={
+      vote: num
+    }
   }
 
   loginButtonClicked(e) {
@@ -66,6 +55,7 @@ class App extends Component {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
     } else {
       return (
+        <div>
         <div className="profile">
 
           <div className="info col-md-5">
@@ -80,18 +70,6 @@ class App extends Component {
 
         <br />
 
-        <div className="App">
-
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </div>
-
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-
-          <Login/>
 
           <SanicProfileList addNum={this.addNum()}/>
 
@@ -104,7 +82,6 @@ class App extends Component {
         <div className="content">
           {this.props.children}
         </div>
-
         </div>
       )
     }
@@ -117,7 +94,6 @@ class App extends Component {
             { this.sessionButton() }
         </div>
       </section>
->>>>>>> rob
     );
   }
 }
