@@ -1,24 +1,17 @@
-.App {
-  text-align: center;
+section {
+  background-image: url("http://abduzeedo.com/sites/default/files/originals/s/screen_shot_2011-12-20_at_10.58.04_pm.png");
+  background-size: cover;
+  height: 770px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.displayName, .waiting {
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.loader {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.info {
+  
 }
