@@ -69,16 +69,12 @@ class App extends Component {
         </div>
 
         <br />
-
-
           <SanicProfileList addNum={this.addNum()}/>
 
-
-
-          <ul className="header">
-
-          <li><Link to="/SanicProfileList" activeClassName="active" className="navlink">SanicProfileList</Link></li>
-        </ul>
+        <ul className="header">
+      <li><Link to="/SanicRacerList" activeClasseName="active">SanicRacerList</Link></li>
+      <li><Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link></li>
+      </ul>
         <div className="content">
           {this.props.children}
         </div>
