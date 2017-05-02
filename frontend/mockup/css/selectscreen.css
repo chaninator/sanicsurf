@@ -71,7 +71,8 @@ img {
 .sanic:hover{
   background-color: #FF0000;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-  animation: rainbow .1s infinite;
+  animation: rainbow .25s infinite;
+  background: 100vh;
 }
 
 @keyframes rainbow {
@@ -93,6 +94,12 @@ img {
     display: none;
   }
 
+  .character-select {
+    display:flex;
+    flex-direction:row;
+    margin: 10px;
+  }
+
   .sanic-select-mobile {
     display: block;
     margin: 0;
@@ -108,5 +115,12 @@ img {
     justify-content: center;
     background-color: white;
   }
+
+  .top-row, .mid-row, .bot-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
 
 }

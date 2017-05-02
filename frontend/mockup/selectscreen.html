@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choose your Sanic</title>
   <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
-  <link rel="stylesheet" href="css/selectscreen.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/selectscreen.css">
 </head>
 
 <body>
@@ -29,6 +29,7 @@
         </div>
       </div>
 
+      <!-- sanic character selection in mobile view -->
       <div class="sanic-select-mobile col-xs-12">
         <div class="row top-row">
           <div data-sanic="1" class="col-xs-6 sanic"><img src="http://www.briannedrouhard.com/images/sonicpoops.gif" alt=""></div>
@@ -77,10 +78,25 @@
           <p class="sanic-stats">Stats go here</p>
         </div>
       </div>
+
+      <!-- mobile modols code begins here -->
+      <div class="modal fade bs-example-modal-sm" id="sanic-info1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <img class="sanic-profile" src="http://www.briannedrouhard.com/images/sonicpoops.gif" alt="">
+            <h2 class="sanic-name">Sanic Sanderson</h2>
+            <p class="sanic-stats">Stats go here</p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
+
   <!-- <audio id="sanicTheme" loop="loop" src="http://www.soniczone0.com/games/sonic1/downloads/s1-ghz-bgm.mp3"></audio> -->
 </body>
+<script src="javascript/tingle.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
 <script src="javascript/script.js" charset="utf-8"></script>
 
