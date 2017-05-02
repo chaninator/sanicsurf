@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class SanicProfile extends Component {
   pick(){
-    console.log('PICKED THIS SANIC');
+    console.log('PICKED THIS SANIC #1');
 
   }
 
