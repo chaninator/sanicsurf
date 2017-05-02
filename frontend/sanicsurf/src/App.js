@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import './App.css'
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
-import { Link, IndexLink } from 'react-router';
+import { Link, IndexLink, ReactRouter } from 'react-router';
 import { firebase, auth } from './utils/firebase';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import SanicProfileList from './components/SanicProfileList';
+import WaitingPage from './components/WaitingPage';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentUser: null
-    }
-  }
+      currentUser: null,
+      start: false
+}
+}
 
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
@@ -42,23 +45,28 @@ class App extends Component {
     auth.signOut();
   }
 
-  sessionButton() {
-    if (!this.state.currentUser ) {
-      return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
-    } else {
-      return (
-        <div className="profile">
+componentDidUpdate(prevState) {
+  // only update chart if the data has changed
+  if (prevState.start !== this.state.start) {
+    this.sessionButton()
+    };
+  }
 
-          <div className="info col-md-5">
-            <p className="displayName"> { this.state.currentUser.displayName } </p>
-            <p className="waiting">  Waiting on game to begin... </p>
-            <LogoutButton logoutButtonClicked={ this.logoutButtonClicked }>Log out</LogoutButton>
-          </div>
-          <div className="loader col-md-2"><img src="./images/loading.gif"/></div>
-          <div className="space col-md-5"></div>
-          <Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>
-        </div>
-      )
+handleClick() {
+  this.setState({
+    start: true
+  })
+}
+
+
+
+  sessionButton() {
+    if (this.state.currentUser && this.state.start) {
+      return <SanicProfileList />
+    } else if (this.state.currentUser) {
+      return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
+    } else {
+      return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
     }
   }
 
@@ -68,6 +76,10 @@ class App extends Component {
         <div className="App">
             { this.sessionButton() }
         </div>
+        {/*this button changes the state of start which will set of the function sessionButton again through the 
+          componentDidUpdate method (listens for a state change)*/}
+        <button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button>
+
       </section>
     );
   }
