@@ -85,7 +85,7 @@ img {
     83.33% { background-color: #FF00FF; }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 450px) {
   .sanic-display {
     display: none;
   }
