@@ -45,10 +45,25 @@ class App extends Component {
     auth.signOut();
   }
 
+componentDidUpdate(prevState) {
+  // only update chart if the data has changed
+  if (prevState.start !== this.state.start) {
+    this.sessionButton()
+    };
+  }
+
+handleClick() {
+  this.setState({
+    start: true
+  })
+}
+
+
+
   sessionButton() {
     if (this.state.currentUser && this.state.start) {
       return <SanicProfileList />
-    } else if (this.state.currentUser ) {
+    } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
@@ -61,6 +76,10 @@ class App extends Component {
         <div className="App">
             { this.sessionButton() }
         </div>
+        {/*this button changes the state of start which will set of the function sessionButton again through the 
+          componentDidUpdate method (listens for a state change)*/}
+        <button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button>
+
       </section>
     );
   }

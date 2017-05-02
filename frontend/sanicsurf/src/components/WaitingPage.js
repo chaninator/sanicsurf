@@ -3,6 +3,7 @@ import LogoutButton from './LogoutButton';
 import {Link} from 'react-router';
 
 class WaitingPage extends Component {
+
   render(){
     return(
     <div className="waiting">
