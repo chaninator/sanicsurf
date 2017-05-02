@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'
+
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import { Link, IndexLink, ReactRouter } from 'react-router';
@@ -73,12 +73,10 @@ handleClick() {
   render() {
     return (
       <section>
-        <div className="App">
-            { this.sessionButton() }
-        </div>
-        {/*this button changes the state of start which will set of the function sessionButton again through the 
-          componentDidUpdate method (listens for a state change)*/}
-        <button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button>
+
+        { this.sessionButton() }
+
+        {/*<button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button> */}
 
       </section>
     );
