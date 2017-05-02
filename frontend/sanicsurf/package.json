@@ -7,24 +7,16 @@
     "firebase": "^3.8.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-<<<<<<< HEAD
-
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-router": "^3.0.5",
-
-=======
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.5.4",
-    "react-router": "^3.0.5",
->>>>>>> 6a4396b8661e106a46683672fab5d2cb535108f3
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
