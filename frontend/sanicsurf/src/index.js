@@ -18,9 +18,9 @@ ReactDOM.render(
 
     <Route path="/" component={App}>
       <IndexRoute component={App}/>
-      <Route path="SanicRacerList" component={SanicRacerList}/>
-      <Route path="SanicProfileList" component={SanicProfileList}/>
     </Route>
+    <Route path="SanicRacerList" component={SanicRacerList}/>
+    <Route path="SanicProfileList" component={SanicProfileList}/>
     <Route path="Admin" component={Admin}/>
     <Route path="*" component={NotFound} />
 

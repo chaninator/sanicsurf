@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-import { Link, IndexLink } from 'react-router';
-import SanicProfileList from './components/SanicProfileList';
+import './App.css'
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
+import { Link, IndexLink } from 'react-router';
 import { firebase, auth } from './utils/firebase';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import './App.css'
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentUser: null,
-      vote: 0
-    }
-  }
-
-  addNum(){
-    this.setState={
-
+      currentUser: null
     }
   }
 
@@ -55,7 +47,6 @@ class App extends Component {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
     } else {
       return (
-        <div>
         <div className="profile">
 
           <div className="info col-md-5">
@@ -65,21 +56,7 @@ class App extends Component {
           </div>
           <div className="loader col-md-2"><img src="./images/loading.gif"/></div>
           <div className="space col-md-5"></div>
-
-        </div>
-
-        <br />
-
-          <SanicProfileList addNum={this.addNum()}/>
-
-        <ul className="header">
-      <li><Link to="/SanicRacerList" activeClasseName="active">SanicRacerList</Link></li>
-      <li><Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link></li>
-      </ul>
-        <div className="content">
-          {this.props.children}
-        </div>
-
+          <Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>
         </div>
       )
     }
@@ -92,7 +69,6 @@ class App extends Component {
             { this.sessionButton() }
         </div>
       </section>
-
     );
   }
 }
