@@ -1,4 +1,4 @@
-section {
+.waiting {
   background-image: url("http://abduzeedo.com/sites/default/files/originals/s/screen_shot_2011-12-20_at_10.58.04_pm.png");
   background-size: cover;
   height: 770px;
@@ -13,5 +13,5 @@ section {
 }
 
 .info {
-  
+
 }

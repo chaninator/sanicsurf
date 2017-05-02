@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import './App.css'
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
-import { Link, IndexLink } from 'react-router';
+import { Link, IndexLink, ReactRouter } from 'react-router';
 import { firebase, auth } from './utils/firebase';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import SanicProfileList from './components/SanicProfileList';
+import WaitingPage from './components/WaitingPage';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentUser: null
-    }
-  }
+      currentUser: null,
+      start: false
+}
+}
 
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
@@ -43,22 +46,12 @@ class App extends Component {
   }
 
   sessionButton() {
-    if (!this.state.currentUser ) {
-      return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
+    if (this.state.currentUser && this.state.start) {
+      return <SanicProfileList />
+    } else if (this.state.currentUser ) {
+      return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
-      return (
-        <div className="profile">
-
-          <div className="info col-md-5">
-            <p className="displayName"> { this.state.currentUser.displayName } </p>
-            <p className="waiting">  Waiting on game to begin... </p>
-            <LogoutButton logoutButtonClicked={ this.logoutButtonClicked }>Log out</LogoutButton>
-          </div>
-          <div className="loader col-md-2"><img src="./images/loading.gif"/></div>
-          <div className="space col-md-5"></div>
-          <Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>
-        </div>
-      )
+      return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
     }
   }
 
