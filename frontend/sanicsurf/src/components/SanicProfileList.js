@@ -5,7 +5,7 @@ class SanicProfileList extends Component {
   render(){
     return(
       <div>
-
+      <p>Choose YOUR SANIC!!!</p>
 
       <SanicProfile/>
       <SanicProfile/>
