@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // $("#sanicTheme").get(0).play();
+  $("#sanicTheme").get(0).play();
   $('.sanic-hidden').hide();
   $('.active').show();
 
@@ -23,7 +23,5 @@ $(document).ready(function() {
       $('.sanic-display .info' + sanicId).show();
     });
   }
-
-
 
 });
