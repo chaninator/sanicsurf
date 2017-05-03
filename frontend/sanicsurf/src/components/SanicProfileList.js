@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Redirect} from 'react-router';
 import SanicProfile from './SanicProfile';
 
 class SanicProfileList extends Component {
@@ -9,7 +8,7 @@ class SanicProfileList extends Component {
       <p>Choose YOUR SANIC!!!</p>
 
       <SanicProfile/>
-      
+
 
 
       </div>
