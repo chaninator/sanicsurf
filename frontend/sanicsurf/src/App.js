@@ -63,11 +63,12 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicProfileList />
+      return <SanicSelect />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
+
     }
   }
 

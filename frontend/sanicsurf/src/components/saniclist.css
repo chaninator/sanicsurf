@@ -48,19 +48,12 @@ img {
 }
 
 .sanic-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   color: blue;
-  /*font-family: 'Paytone One';
+  font-family: 'Schoolbell', sans-serif;
   text-transform: uppercase;
-  letter-spacing: -2px;
-  margin: 11px 0 17px 0;
-  font-size: 100px;
-  line-height: 80px;
-  color: blue;
-  text-shadow: 0 13.36px 8.896px gold,0 -10px 5px black;
-  letter-spacing: -4px;*/
+  font-size: 80px;
+  margin: 0;
 }
 
 .sanic-profile {
@@ -76,13 +69,30 @@ img {
 }
 
 @keyframes rainbow {
-    /* set your colors and when they should occur here */
-    0%, 100% { background-color: #FF0000; }
-    16.66% { background-color: #FFFF00; }
-    33.33% { background-color: #00FF00; }
-    50% { background-color: #00FFFF; }
-    66.66% { background-color: #0000FF; }
-    83.33% { background-color: #FF00FF; }
+  0%, 100% { background-color: #FF0000; }
+  16.66% { background-color: #FFFF00; }
+  33.33% { background-color: #00FF00; }
+  50% { background-color: #00FFFF; }
+  66.66% { background-color: #0000FF; }
+  83.33% { background-color: #FF00FF; }
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width:
 }
 
 @media (max-width: 450px) {
@@ -108,7 +118,7 @@ img {
   .sanic {
     border: 5px solid blue;
     height: 150px;
-    max-width: 150px;
+    width: 150px;
     margin: 20px;
     display: flex;
     align-items: center;
