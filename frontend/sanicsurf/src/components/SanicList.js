@@ -8,9 +8,20 @@ class SanicList extends Component {
     super(props);
 
     this.state = {
-      sanics: this.props.allSanics
+      chosenSanic: 'sanic'
     }
 }
+updateSanic(data){
+  this.setState({
+    chosenSanic: data
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+changeSanic(){
+  this.props.changeSanic(this.state.chosenSanic)
+}
+
 componentWillMount() {
   console.log('all sanics:', this.props.allSanics)
 }
@@ -38,11 +49,15 @@ componentWillMount() {
       return (
         <div className="sanic-select col-md-8">
           <div className="row">
-            {sanics[0]}{sanics[1]}{sanics[2]}
+            {sanics[0]}
+            {/*<button onClick={this.updateSanic.bind(this)}>hello</button>*/}
+            <div>{sanics[1]}</div>
+            <div>{sanics[2]}</div>
           </div>
           <div className="row">
             {sanics[3]}{sanics[4]}{sanics[5]}
           </div>
+          <button onClick={this.changeSanic.bind(this)}>hey</button>
         </div>
       )
 

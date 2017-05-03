@@ -9,7 +9,7 @@ class SanicSelect extends Component {
     super(props);
 
     this.state = {
-      sanics: []
+      sanics: [],
     }
   }
 
@@ -51,7 +51,7 @@ class SanicSelect extends Component {
               <h1 className="sanic-title">CCBBSANIC</h1>
               <div className="container">
                 <div className="row character-select">
-                  <SanicList allSanics={this.state.sanics}/>
+                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
                   <SanicProfile/>
                 </div>
               </div>
