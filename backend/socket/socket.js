@@ -28,8 +28,7 @@ module.exports = function(server){
     socket.on('vote', function(vote){
       // save the vote to the DB, then call updateVotes()
       // to send everything as an update
-
-      // Votes.save(vote)
+      //Votes.save(vote)
       updateVotes()
     })
 
