@@ -11,6 +11,10 @@ import {
 import SanicProfileList from './components/SanicProfileList';
 import WaitingPage from './components/WaitingPage';
 
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
+console.log('SOCKET:', socket)
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +22,7 @@ class App extends Component {
     this.state = {
       currentUser: null,
       start: false
-}
+  }
 }
 
   componentWillMount() {
@@ -30,7 +34,14 @@ class App extends Component {
         this.setState({ currentUser: null });
       }
     });
+
+    var self = this
+    socket.emit('hello')
+    socket.on('start', function () {
+      self.setState({start: true})
+    })
   }
+
 
   loginButtonClicked(e) {
     e.preventDefault();
@@ -41,7 +52,6 @@ class App extends Component {
 
   logoutButtonClicked(e) {
     e.preventDefault();
-
     auth.signOut();
   }
 
@@ -52,11 +62,11 @@ componentDidUpdate(prevState) {
     };
   }
 
-handleClick() {
-  this.setState({
-    start: true
-  })
-}
+  handleClick() {
+    // this.setState({
+    //   start: true
+    // })
+  }
 
 
 
@@ -76,7 +86,7 @@ handleClick() {
         <div className="App">
             { this.sessionButton() }
         </div>
-        {/*this button changes the state of start which will set of the function sessionButton again through the 
+        {/*this button changes the state of start which will set of the function sessionButton again through the
           componentDidUpdate method (listens for a state change)*/}
         <button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button>
 
