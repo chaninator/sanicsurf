@@ -14,14 +14,13 @@ class SanicSelect extends Component {
   }
 
   getSanics() {
-    console.log('at least it fucking clicks')
     let self = this
     axios.get('http://localhost:3000/api/sanics').then(function(response) {
       console.log('the response: ', response.data.sanic);
       self.setState({sanics: response.data.sanic});
       console.log('SanicSelect State: ', self.state.sanics);
     }).catch(function(err) {
-      console.log('a mother fucking error: ', err)
+      console.log('a stupid error: ', err)
     })
   }
 
