@@ -1,0 +1,178 @@
+body {
+  background-image: url(http://orig01.deviantart.net/98e1/f/2012/363/6/1/sonic_green_hill_zone_blocks_background____free_by_derpychii-d5pkdal.png);
+}
+
+img {
+  max-width: 100%;
+}
+
+.sanic-select {
+  border: 10px solid blue;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 100px;
+  background-color: gold;
+}
+
+.sanic-select-mobile {
+  display: none;
+}
+
+.sanic-display {
+  border: 10px solid blue;
+  text-align: center;
+  color: white;
+}
+
+.show {
+  display:block!important;
+}
+
+.character-select {
+  display:flex;
+  flex-direction:row;
+  margin-top: 100px;
+}
+
+.sanic {
+  border: 5px solid blue;
+  height: 150px;
+  max-width: 150px;
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.sanic-title {
+  text-align: center;
+  color: blue;
+  font-family: 'Schoolbell', sans-serif;
+  text-transform: uppercase;
+  font-size: 80px;
+  margin: 0;
+}
+
+.sanic-profile {
+  height: 200px;
+  padding-top: 30px;
+}
+
+.sanic:hover{
+  background-color: #FF0000;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  animation: rainbow .25s infinite;
+  background: 100vh;
+}
+
+@keyframes rainbow {
+  0%, 100% { background-color: #FF0000; }
+  16.66% { background-color: #FFFF00; }
+  33.33% { background-color: #00FF00; }
+  50% { background-color: #00FFFF; }
+  66.66% { background-color: #0000FF; }
+  83.33% { background-color: #FF00FF; }
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width:
+}
+
+@media (max-width: 450px) {
+  .sanic-display {
+    display: none;
+  }
+
+  .sanic-select {
+    display: none;
+  }
+
+  .character-select {
+    display:flex;
+    flex-direction:row;
+    margin: 10px;
+  }
+
+  .sanic-select-mobile {
+    display: block;
+    margin: 0;
+  }
+
+  .sanic {
+    border: 5px solid blue;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .top-row, .mid-row, .bot-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .modal {
+    text-align: center;
+    padding: 0!important;
+  }
+
+  .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    width: 300px;
+    text-align: center;
+  }
+
+  .btn-go-fast {
+    background-color: blue;
+    border: 3px solid gold;
+    border-radius: 50px;
+    padding: 5px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  .btn-go-slow {
+    background-color: red;
+    border: 3px solid blue;
+    border-radius: 50px;
+    padding: 5px 20px;
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+}

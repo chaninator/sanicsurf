@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -8,8 +10,14 @@ var cors = require('cors')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var api = require('./routes/api')
 
 var app = express();
+
+
+var mongoose = require('mongoose');
+mongoose.connect(process.env.SANIC_DB);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +36,7 @@ app.use(cors());
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api', api)
 
 
 

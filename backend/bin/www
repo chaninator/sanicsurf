@@ -25,8 +25,7 @@ var server = http.createServer(app);
   * Add Socket.io
   */
 
- var server = require('http').Server(app);
-
+var server = require('http').Server(app);
 require('../socket/socket')(server);
 
 
