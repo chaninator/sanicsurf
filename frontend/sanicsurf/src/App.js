@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import SanicProfileList from './components/SanicProfileList';
+import SanicSelect from './components/SanicSelect';
 import WaitingPage from './components/WaitingPage';
 
 import io from 'socket.io-client';
@@ -40,7 +40,6 @@ class App extends Component {
       self.setState({start: true})
     })
   }
-
 
   loginButtonClicked (e) {
     e.preventDefault();
