@@ -1,23 +1,18 @@
 import React, {Component} from 'react';
-
+import SanicProfileItem from './SanicProfileItem';
 
 class SanicProfile extends Component {
-  pick(){
-    console.log('PICKED THIS SANIC #1');
 
-  }
+  render() {
+    const isMobile = window.innerWidth <= 500;
+    if (isMobile) {
 
-  render(){
-    return(
-      <div>
-          <h2>Sanic #1</h2>
-          <p className='description'>OOOO BOI DAT BOI FAST</p>
+    } else {
 
-          <button onClick={()=> this.props.addNum}>
-            Pick Me
-          </button>
-      </div>
-    )
+      return (
+        <SanicProfileItem />
+      )
+    }
   }
 }
 

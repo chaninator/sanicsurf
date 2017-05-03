@@ -41,7 +41,6 @@ class App extends Component {
     })
   }
 
-
   loginButtonClicked (e) {
     e.preventDefault();
 
@@ -68,6 +67,7 @@ class App extends Component {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
+
     }
   }
 
