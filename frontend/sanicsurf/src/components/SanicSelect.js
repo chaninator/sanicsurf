@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SanicList from './SanicList';
 import SanicProfile from './SanicProfile';
+import axios from 'axios';
 import './saniclist.css';
 
 class SanicSelect extends Component {
@@ -8,42 +9,36 @@ class SanicSelect extends Component {
     super(props);
 
     this.state = {
-      sanics: ''
+      sanics: [],
     }
   }
 
-  getSanic(){
-    console.log('this state is', this.state);
-    const BASE_URL = 'https://localhost:3000/api/';
-    const FETCH_URL = BASE_URL + 'sanics';
-    console.log('FETCH_URL',FETCH_URL);
-    fetch(FETCH_URL,{
-      method: 'GET'
+  getSanics() {
+    console.log('at least it fucking clicks')
+    let self = this
+    axios.get('http://localhost:3000/api/sanics').then(function(response) {
+      console.log('the response: ', response.data.sanic);
+      self.setState({sanics: response.data.sanic});
+      console.log('SanicSelect State: ', self.state.sanics);
+    }).catch(function(err) {
+      console.log('a mother fucking error: ', err)
     })
-    .then(response => response.json())
-    .then(json =>{
-         const sanics = json.sanics;
-         console.log('Sanics', sanics);
-         this.setState({sanics});
-       });
   }
 
-  componentWillMount(){
-
+  componentDidMount() {
+    this.getSanics();
+    console.log('ssssssssanc', this.state)
   }
 
   render() {
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
       return (
-        <div className="outer">
-          <div className="middle">
-            <div className="inner">
-              <div className="container">
-                <div className="row character-select">
-                  <SanicList/>
-                </div>
-              </div>
+        <div className="inner">
+          <h4 className="sanic-title">CCBBSANIC</h4>
+          <div className="container">
+            <div className="row character-select">
+              <SanicList allSanics={this.state.sanics}/>
             </div>
           </div>
         </div>
@@ -56,8 +51,7 @@ class SanicSelect extends Component {
               <h1 className="sanic-title">CCBBSANIC</h1>
               <div className="container">
                 <div className="row character-select">
-                  <button onClick={()=> this.getSanic()}/>
-                  <SanicList/>
+                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
                   <SanicProfile/>
                 </div>
               </div>

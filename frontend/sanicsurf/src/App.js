@@ -20,8 +20,16 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      start: false
+      start: true,
+      chosenSanic: ''
     }
+  }
+
+  changeSanic(data) {
+    this.setState({
+      chosenSanic: data
+    })
+    console.log('chosen status:', this.state.chosenSanic);
   }
 
   componentWillMount() {
@@ -62,7 +70,7 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicSelect />
+      return <SanicSelect changeSanic={this.changeSanic.bind(this)}/>
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
