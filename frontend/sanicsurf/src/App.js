@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import SanicProfileList from './components/SanicProfileList';
+import SanicSelect from './components/SanicSelect';
 import WaitingPage from './components/WaitingPage';
 
 import io from 'socket.io-client';
@@ -63,7 +63,7 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicProfileList />
+      return <SanicSelect />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
