@@ -7,6 +7,7 @@ import './index.css';
 
 
 import SanicSelect from './components/SanicSelect';
+import SanicRacer from './components/SanicRacer';
 import NotFound from './components/NotFound';
 import Admin from './components/Admin';
 

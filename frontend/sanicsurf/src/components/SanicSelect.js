@@ -4,11 +4,11 @@ import SanicProfile from './SanicProfile';
 import './saniclist.css';
 
 class SanicSelect extends Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {}
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {}
+  }
 
   render() {
     const isMobile = window.innerWidth <= 500;
