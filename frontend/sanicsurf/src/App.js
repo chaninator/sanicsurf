@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'
+
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import { Link, IndexLink, ReactRouter } from 'react-router';
@@ -11,56 +11,57 @@ import {
 import SanicProfileList from './components/SanicProfileList';
 import WaitingPage from './components/WaitingPage';
 
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
+console.log('SOCKET:', socket)
+
 class App extends Component {
   constructor(props) {
-    super(props);
-
+    super(props)
     this.state = {
       currentUser: null,
       start: false
-}
-}
+    }
+  }
 
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
-        console.log('Logged in:', currentUser);
-        this.setState({ currentUser });
+        console.log('Logged in:', currentUser)
+        this.setState({ currentUser })
       } else {
-        this.setState({ currentUser: null });
+        this.setState({ currentUser: null })
       }
-    });
+    })
+
+    var self = this
+    socket.emit('hello')
+    socket.on('start', function () {
+      self.setState({start: true})
+    })
   }
 
-  loginButtonClicked(e) {
+
+  loginButtonClicked (e) {
     e.preventDefault();
 
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
 
-  logoutButtonClicked(e) {
-    e.preventDefault();
-
-    auth.signOut();
+  logoutButtonClicked (e) {
+    e.preventDefault()
+    auth.signOut()
   }
 
-componentDidUpdate(prevState) {
+  componentDidUpdate(prevState) {
   // only update chart if the data has changed
   if (prevState.start !== this.state.start) {
     this.sessionButton()
-    };
+    }
   }
 
-handleClick() {
-  this.setState({
-    start: true
-  })
-}
-
-
-
-  sessionButton() {
+  sessionButton () {
     if (this.state.currentUser && this.state.start) {
       return <SanicProfileList />
     } else if (this.state.currentUser) {
@@ -73,17 +74,15 @@ handleClick() {
   render() {
     return (
       <section>
-        <div className="App">
-            { this.sessionButton() }
-        </div>
-        {/*this button changes the state of start which will set of the function sessionButton again through the 
-          componentDidUpdate method (listens for a state change)*/}
-        <button onClick={this.handleClick.bind(this)}>HELLOOOOOOOOOOo</button>
-
+        {this.sessionButton()}
       </section>
-    );
+    )
   }
 }
 
+<<<<<<< HEAD
 export default App;
 che
+=======
+export default App
+>>>>>>> f12db2dd562045aa6a4727d4463fc56f5c60f34b

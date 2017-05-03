@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import LogoutButton from './LogoutButton';
 import {Link} from 'react-router';
+import './WaitingPage.css';
 
 class WaitingPage extends Component {
 
   render(){
     return(
-    <div className="waiting">
+    <div className="background">
       <div className="profile">
 
         <div className="info col-md-5">
@@ -16,7 +17,7 @@ class WaitingPage extends Component {
         </div>
         <div className="loader col-md-2"><img src="./images/loading.gif" alt=""/></div>
         <div className="space col-md-5"></div>
-        <Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>
+        {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
       </div>
     </div>
     )
