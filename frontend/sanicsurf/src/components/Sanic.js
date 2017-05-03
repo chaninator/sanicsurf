@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class Sanic extends Component {
 
-  
+
 
   handleClick() {
     console.log('HANDLE ME IN THE FACE');
@@ -15,13 +15,13 @@ class Sanic extends Component {
     if (isMobile) {
       return (
         <div className="col-xs-6 sanic">
-          <img src ={this.props.src}/>
+          <img src={this.props.imageUrl} />
         </div>
       )
     } else {
       return (
         <div className="col-md-4 sanic" onClick={this.handleClick}>
-          <img src ={this.props.src}/>
+          <img src={this.props.imageUrl} />
         </div>
       )
     }
