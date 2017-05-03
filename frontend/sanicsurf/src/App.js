@@ -62,7 +62,7 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicSelect img={this.handleResponse}/>
+      return <SanicSelect />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <section>
         {this.sessionButton()}
-        
+
       </section>
     )
   }
