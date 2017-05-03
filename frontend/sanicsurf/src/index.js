@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import App from './App';
 import './index.css';
-import SanicProfileList from './components/SanicProfileList';
-import SanicRacerList from './components/SanicRacerList';
+
+
+
+import SanicSelect from './components/SanicSelect';
 import NotFound from './components/NotFound';
 import Admin from './components/Admin';
 
@@ -18,8 +20,8 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={App}/>
     </Route>
-    <Route path="SanicRacerList" component={SanicRacerList}/>
-    <Route path="SanicProfileList" component={SanicProfileList}/>
+
+    <Route path="SanicSelect" component={SanicSelect}/>
     <Route path="Admin" component={Admin}/>
     <Route path="*" component={NotFound} />
 

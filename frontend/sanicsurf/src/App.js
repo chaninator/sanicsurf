@@ -56,7 +56,7 @@ class App extends Component {
           </div>
           <div className="loader col-md-2"><img src="./images/loading.gif"/></div>
           <div className="space col-md-5"></div>
-          <Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>
+          <Link to="/SanicSelect" activeClasseName="active">SanicSelect</Link>
         </div>
       )
     }
