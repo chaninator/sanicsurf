@@ -17,16 +17,12 @@ module.exports = function(server){
   }
 
   io.on('connection', function(socket){
-    socket.on('hello', function() {
-      console.log('User connected')
-    })
-
-    io.emit('start')
+    console.log('a fucking computer connected via socket.io: ')
 
     // if admin sends start, broadcast start to others connected
-    socket.on('start', function(){
-      io.broadcast.emit('start')
-    })
+     // io.on('start', function(){
+     setTimeout(function() {socket.emit('start')}, 5000)
+    // })
 
     // listen for a vote from a user
     socket.on('vote', function(vote){

@@ -3,9 +3,16 @@ import React, {Component} from 'react';
 class SanicRacerList extends Component {
   render(){
     return(
-      <div>
-        <h2>SanicRacerList Content will go here</h2>
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="level-container cold-md-12">
+            <div id="bg-scroll">
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
     )
   }
 }
