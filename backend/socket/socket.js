@@ -3,7 +3,7 @@ module.exports = function(server){
   //var Votes = require('./models/Votes')
 
   // this will be the domain where our frontend is located
-  url = 'http://localhost:5001'
+  url = 'http://localhost:4000'
 
   var io = require('socket.io')(server, {origins: url});
 
@@ -17,20 +17,20 @@ module.exports = function(server){
   }
 
   io.on('connection', function(socket){
+    console.log('a fucking computer connected via socket.io: ')
 
     // if admin sends start, broadcast start to others connected
-    socket.on('start', function(){
-      io.broadcast.emit('start')
-    })
+     // io.on('start', function(){
+     setTimeout(function() {socket.emit('start')}, 5000)
+    // })
 
     // listen for a vote from a user
     socket.on('vote', function(vote){
       // save the vote to the DB, then call updateVotes()
       // to send everything as an update
 
-      //Votes.save(vote)
+      // Votes.save(vote)
       updateVotes()
-
     })
 
     // when admin declares complete, send everybody results
