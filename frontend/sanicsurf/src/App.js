@@ -20,7 +20,7 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      start: false
+      start: true
     }
   }
 
@@ -62,12 +62,11 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicSelect />
+      return <SanicSelect img={this.handleResponse}/>
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
-
     }
   }
 
@@ -75,6 +74,7 @@ class App extends Component {
     return (
       <section>
         {this.sessionButton()}
+        
       </section>
     )
   }

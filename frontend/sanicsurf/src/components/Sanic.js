@@ -2,12 +2,9 @@ import React, {Component} from 'react';
 
 class Sanic extends Component {
 
+
+
   
-
-  handleClick() {
-    console.log('HANDLE ME IN THE FACE');
-
-  }
 
   render() {
     console.log('Sanic loaded');
@@ -20,7 +17,7 @@ class Sanic extends Component {
       )
     } else {
       return (
-        <div className="col-md-4 sanic" onClick={this.handleClick}>
+        <div className="col-md-4 sanic" }>
           <img src ={this.props.src}/>
         </div>
       )

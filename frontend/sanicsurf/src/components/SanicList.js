@@ -24,7 +24,7 @@ class SanicList extends Component {
     } else {
       return (
         <div className="sanic-select col-md-8">
-          <Sanic />
+          <Sanic img={this.props.img}/>
         </div>
       )
 
