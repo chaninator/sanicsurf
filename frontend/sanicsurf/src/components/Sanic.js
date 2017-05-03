@@ -4,7 +4,7 @@ class Sanic extends Component {
 
 
 
-  
+
 
   render() {
     console.log('Sanic loaded');
@@ -17,7 +17,7 @@ class Sanic extends Component {
       )
     } else {
       return (
-        <div className="col-md-4 sanic" }>
+        <div className="col-md-4 sanic" >
           <img src ={this.props.src}/>
         </div>
       )
