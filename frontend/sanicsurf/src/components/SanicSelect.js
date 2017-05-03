@@ -14,8 +14,8 @@ class SanicSelect extends Component {
 
   getSanic(){
     console.log('this state is', this.state);
-    const BASE_URL = 'https://localhost:3000';
-    const FETCH_URL = BASE_URL;
+    const BASE_URL = 'https://localhost:3000/api/';
+    const FETCH_URL = BASE_URL + 'sanics';
     console.log('FETCH_URL',FETCH_URL);
     fetch(FETCH_URL,{
       method: 'GET'
@@ -29,7 +29,7 @@ class SanicSelect extends Component {
   }
 
   componentWillMount(){
-    
+
   }
 
   render() {
