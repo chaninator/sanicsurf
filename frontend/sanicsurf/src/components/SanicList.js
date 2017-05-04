@@ -16,8 +16,8 @@ componentWillMount() {
 }
   render() {
     console.log('SanicList loaded');
-    const sanics = this.props.allSanics.map((sanic, i) => {
-    return <Sanic key={i} imageUrl={sanic.url} name={sanic.name} />;
+    const sanics = this.props.allSanics.map((sanic) => {
+    return <Sanic key={sanic.sanic_id} {...sanic}/>;
     });
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
