@@ -10,9 +10,10 @@ class SanicProfileItem extends Component {
 
       return (
         <div className="sanic-display col-md-4">
-          <img className="sanic-profile" src={this.props.currentSanic.src}/>
-          <h2 className="sanic-name">{this.props.currentSanic.name}</h2>
-          <p className="sanic-stats">{this.props.currentSanic.stats}</p>
+          HELLO
+          <img className="sanic-profile" src={this.props.src}/>
+          <h2 className="sanic-name">{this.props.name}</h2>
+          <p className="sanic-stats">{this.props.stats}</p>
         </div>
       )
     }
