@@ -8,40 +8,56 @@ class SanicList extends Component {
     super(props);
 
     this.state = {
-      chosenSanic: 'sanic'
+      chosenSanic: null
     }
 }
-updateSanic(data){
-  this.setState({
-    chosenSanic: data
-  })
-  console.log('chosen sanic', this.state.chosenSanic)
-}
 
-changeSanic(){
-  this.props.changeSanic(this.state.chosenSanic)
-}
+  updateSanic(chosenSanic){
+    this.setState({
+      chosenSanic: chosenSanic
+    }, () => this.props.changeSanic(chosenSanic))
 
-componentWillMount() {
-  console.log('all sanics:', this.props.allSanics)
-}
+  }
+
+  changeSanic () {
+    this.props.changeSanic(this.state.chosenSanic)
+  }
+
+  componentDidUpdate(prevState) {
+  // only update chart if the data has changed
+  if (prevState.chosenSanic !== this.state.chosenSanic) {
+    console.log('state of SanicList chosenSanic', this.state.chosenSanic)
+    }
+  }
+
+  componentWillMount() {
+    //console.log('all sanics:', this.props.allSanics)
+  }
+
   render() {
+
     console.log('SanicList loaded');
-    const sanics = this.props.allSanics.map((sanic, i) => {
-    return <Sanic key={i} imageUrl={sanic.url} name={sanic.name} />;
+    const sanics = this.props.allSanics.map((sanic) => {
+    return <Sanic key={sanic.sanic_id} {...sanic}/>;
     });
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
       return (
         <div className="sanic-select-mobile">
           <div className="row">
-            {sanics[0]}{sanics[1]}
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[0])}>{sanics[0]}</div>
+
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
           </div>
           <div className="row">
-            {sanics[2]}{sanics[3]}
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
+
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
           </div>
           <div className="row">
-            {sanics[4]}{sanics[5]}
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[4])}>{sanics[4]}</div>
+
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[5])}>{sanics[5]}</div>
           </div>
         </div>
       )
@@ -49,15 +65,22 @@ componentWillMount() {
       return (
         <div className="sanic-select col-md-8">
           <div className="row">
-            {sanics[0]}
-            {/*<button onClick={this.updateSanic.bind(this)}>hello</button>*/}
-            <div>{sanics[1]}</div>
-            <div>{sanics[2]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[0])}>{sanics[0]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
           </div>
           <div className="row">
-            {sanics[3]}{sanics[4]}{sanics[5]}
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[4])}>{sanics[4]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[5])}>{sanics[5]}</div>
           </div>
-          <button onClick={this.changeSanic.bind(this)}>hey</button>
+          <button onClick={this.changeSanic.bind(this)}>Play</button>
         </div>
       )
 
