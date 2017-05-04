@@ -21,7 +21,7 @@ module.exports = function(server){
 
     // if admin sends start, broadcast start to others connected
      // io.on('start', function(){
-     setTimeout(function() {socket.emit('start')}, 5000)
+     setTimeout(function() {socket.emit('start')}, 500)
     // })
 
     // listen for a vote from a user
@@ -29,7 +29,8 @@ module.exports = function(server){
       // save the vote to the DB, then call updateVotes()
       // to send everything as an update
       //Votes.save(vote)
-      updateVotes()
+      console.log('vote value:', vote)
+      //updateVotes()
     })
 
     // when admin declares complete, send everybody results
