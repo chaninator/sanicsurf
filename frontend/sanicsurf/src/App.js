@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
 import { Link, IndexLink, ReactRouter } from 'react-router';
 import { firebase, auth } from './utils/firebase';
 import {
   BrowserRouter as Router,
+  Switch,
   Route
 } from 'react-router-dom';
 import SanicSelect from './components/SanicSelect';
 import WaitingPage from './components/WaitingPage';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import SanicRacer from './components/SanicRacer';
+
+import Admin from './components/Admin'
 
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:3000');
@@ -20,7 +23,9 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      start: false
+      start: false,
+      sanic: true,
+      chosenSanic: '1'
     }
   }
 
@@ -61,7 +66,9 @@ class App extends Component {
   }
 
   sessionButton () {
-    if (this.state.currentUser && this.state.start) {
+    if (this.state.currentUser && this.state.start && this.state.sanic) {
+      return <SanicRacer chosenSanic={this.state.chosenSanic} />
+    } else if (this.state.currentUser && this.state.start) {
       return <SanicSelect />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
@@ -71,12 +78,34 @@ class App extends Component {
     }
   }
 
+
+
   render() {
+
+    const xSanicRacer = () => {
+      console.log('xSanicRacer got called!')
+      return (
+        <SanicRacer />
+        )
+    }
+    // return (
+    //   <section>
+    //     {this.sessionButton()}
+    //   </section>
+    // )
+
     return (
-      <section>
-        {this.sessionButton()}
-      </section>
-    )
+        <Router>
+          <div>
+            {this.sessionButton()}
+            <Route exact path="/" component={ LoginButton } />
+            <Route path="/admin" component={ Admin }/>
+            <Route path="/SanicRacer" component={ SanicRacer } />
+            <Route path="/SelectSanic" component={ SanicSelect } />
+            <Route path="/WaitingPage" component={ WaitingPage }/>
+          </div>
+        </Router>
+      )
   }
 }
 
