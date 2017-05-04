@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
 import { Link, IndexLink, ReactRouter } from 'react-router';
 import { firebase, auth } from './utils/firebase';
 import {
   BrowserRouter as Router,
+  Switch,
   Route
 } from 'react-router-dom';
 import SanicSelect from './components/SanicSelect';
 import WaitingPage from './components/WaitingPage';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import SanicRacer from './components/SanicRacer';
+import Admin from './components/Admin'
 
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:3000');
@@ -20,15 +23,18 @@ class App extends Component {
     this.state = {
       currentUser: null,
       start: false,
+      sanic: false,
       chosenSanic: false
     }
   }
 
   changeSanic(data) {
-    this.setState({
-      chosenSanic: data
+   this.setState({
+     chosenSanic: data,
+     sanic: true
+   }, ()=> {
+      socket.emit('vote', this.state.chosenSanic.sanic_id)
     })
-    //console.log('chosen status:', this.state.chosenSanic);
   }
 
   componentWillMount() {
@@ -63,8 +69,12 @@ class App extends Component {
 
   componentDidUpdate(prevState) {
   // only update chart if the data has changed
-  if (prevState.start !== this.state.start) {
-    this.sessionButton()
+    if (prevState.start !== this.state.start) {
+      this.sessionButton()
+    }
+
+    if (prevState.sanic !== this.state.sanic) {
+      this.sessionButton()
     }
   if (prevState.chosenSanic !== this.state.chosenSanic) {
       console.log('state of App.js chosenSanic', this.state.chosenSanic);
@@ -72,8 +82,10 @@ class App extends Component {
   }
 
   sessionButton () {
-    if (this.state.currentUser && this.state.start) {
-      return <SanicSelect changeSanic={this.changeSanic.bind(this) }/>
+    if (this.state.currentUser && this.state.start && this.state.sanic) {
+      return <SanicRacer {...this.state.chosenSanic} />
+    } else if (this.state.currentUser && this.state.start) {
+      return <SanicSelect changeSanic={this.changeSanic.bind(this)} />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
@@ -82,13 +94,20 @@ class App extends Component {
   }
 
   render() {
+
     return (
-      <section>
-        {this.sessionButton()}
-      </section>
-    )
+        <Router>
+            {this.sessionButton()}
+        </Router>
+      )
   }
 }
 
 
 export default App
+
+            // <Route exact path="/" component={ LoginButton } />
+            // <Route path="/admin" component={ Admin }/>
+            // <Route path="/SanicRacer" component={ SanicRacer } />
+            // <Route path="/SelectSanic" component={ SanicSelect } />
+            // <Route path="/WaitingPage" component={ WaitingPage }/>

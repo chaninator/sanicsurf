@@ -12,31 +12,29 @@ class SanicList extends Component {
     }
 }
 
+  updateSanic(chosenSanic){
+    this.setState({
+      chosenSanic: chosenSanic
+    }, () => this.props.changeSanic(chosenSanic))
 
-updateSanic(val){
-  this.setState({
-    chosenSanic: val
-  })
-}
-
-changeSanic(){
-  this.props.changeSanic(this.state.chosenSanic)
-}
-
-componentDidUpdate(prevState) {
-// only update chart if the data has changed
-if (prevState.chosenSanic !== this.state.chosenSanic) {
-  console.log('state of SanicList chosenSanic', this.state.chosenSanic)
   }
-}
 
+  changeSanic () {
+    this.props.changeSanic(this.state.chosenSanic)
+  }
 
-componentWillMount() {
-  //console.log('all sanics:', this.props.allSanics)
-}
+  componentDidUpdate(prevState) {
+  // only update chart if the data has changed
+  if (prevState.chosenSanic !== this.state.chosenSanic) {
+    console.log('state of SanicList chosenSanic', this.state.chosenSanic)
+    }
+  }
+
+  componentWillMount() {
+    //console.log('all sanics:', this.props.allSanics)
+  }
+
   render() {
-
-
 
     console.log('SanicList loaded');
     const sanics = this.props.allSanics.map((sanic) => {
@@ -52,11 +50,14 @@ componentWillMount() {
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
           </div>
           <div className="row">
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
 
-
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
           </div>
           <div className="row">
-            {sanics[4]}{sanics[5]}
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[4])}>{sanics[4]}</div>
+
+            <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[5])}>{sanics[5]}</div>
           </div>
         </div>
       )
