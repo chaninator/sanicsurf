@@ -80,7 +80,6 @@ class SanicList extends Component {
 
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[5])}>{sanics[5]}</div>
           </div>
-          <button onClick={this.changeSanic.bind(this)}>Play</button>
         </div>
       )
 
