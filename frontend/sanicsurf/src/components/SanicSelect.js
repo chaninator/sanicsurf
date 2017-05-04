@@ -37,7 +37,7 @@ class SanicSelect extends Component {
           <h4 className="sanic-title">CCBBSANIC</h4>
           <div className="container">
             <div className="row character-select">
-              <SanicList allSanics={this.state.sanics}/>
+              <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ class SanicSelect extends Component {
               <h1 className="sanic-title">CCBBSANIC</h1>
               <div className="container">
                 <div className="row character-select">
-                  <SanicList allSanics={this.state.sanics}/>
+                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic} />
                   <SanicProfile/>
                 </div>
               </div>
