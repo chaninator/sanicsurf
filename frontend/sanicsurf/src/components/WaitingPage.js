@@ -6,6 +6,7 @@ import './WaitingPage.css';
 class WaitingPage extends Component {
 
   render(){
+    console.log('I have arrived at the waiting page')
     return(
     <div className="background">
       <div className="profile">
