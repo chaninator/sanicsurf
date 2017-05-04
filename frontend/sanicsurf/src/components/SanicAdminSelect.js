@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import SanicList from './SanicList';
 import SanicProfile from './SanicProfile';
 import axios from 'axios';
-import './saniclist.css';
+
 
 class SanicSelect extends Component {
   constructor(props) {

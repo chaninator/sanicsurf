@@ -1,12 +1,24 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import './loginbutton.css';
 
 class LoginButton extends Component {
   render() {
-    return (
-      <button onClick={ this.props.loginButtonClicked }
-        className="btn-login btn btn-primary">{ this.props.children }
-      </button>
-    )
+    const isMobile = window.innerWidth <= 500;
+    if (isMobile) {
+      return (
+        <div className="btn-container">
+          <a onClick={this.props.loginButtonClicked} className="login-btn">{this.props.children}
+          </a>
+        </div>
+      )
+    } else {
+      return (
+        <div className="butn-container">
+          <a onClick={this.props.loginButtonClicked} className="login-btn">{this.props.children}
+          </a>
+        </div>
+      )
+    }
   }
 }
 

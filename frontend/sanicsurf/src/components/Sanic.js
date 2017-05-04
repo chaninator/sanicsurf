@@ -11,10 +11,7 @@ class Sanic extends Component {
     }
   }
 
-  // handleClick() {
-  //
-  //
-  // }
+
 
   render() {
     const sanicId = "/SanicRacer/" + this.props.sanic_id;
