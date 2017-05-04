@@ -34,30 +34,39 @@ class SanicRacer extends Component {
 
   render() {
         console.log('im your fucking SANICRACER SUCCESS STORY')
-    // const isMobile = window.innerWidth <= 500;
-    return  (<div>CCBBS
-      {this.props.chosenSanic}
-      </div>)
+        console.log('data: ', this.props)
+    const isMobile = window.innerWidth <= 500;
 
-  //   if (isMobile) {
-  //     return(
-  //     <div className="container">
-  //       <div className="row">
-  //         <div className="col-sm-3"></div>
-  //         <div className="col-sm-3 col-md-6 selected-sanic">
-  //           <img className="sanic-profile" src={this.state.sanicUrl} alt="" />
-  //           <h2 className="sanic-name">{this.state.sanicName}test</h2>
-  //           <p className="sanic-stats">{this.state.sanicStats}</p>
-  //           <a className="button button-3d-primary button-circle">GO!</a>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   )
-  //   }
-  // else {
-  //     return(
-  //       <div>CCBBS</div>)
-  //   }
+
+    if (isMobile) {
+      return(
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3"></div>
+          <div className="col-sm-3 col-md-6 selected-sanic">
+            <img className="sanic-profile" src={this.props.url} alt="" />
+            <h2 className="sanic-name">{this.props.name}test</h2>
+            <p className="sanic-stats">{this.props.stats}</p>
+            <a className="button button-3d-primary button-circle">GO!</a>
+          </div>
+        </div>
+      </div>
+    )
+    }
+  else {
+      return(
+        <div className="container">
+        <div className="row">
+          <div className="col-sm-3"></div>
+          <div className="col-sm-3 col-md-6 selected-sanic">
+            <img className="sanic-profile" src={this.props.url} alt="" />
+            <h2 className="sanic-name">{this.props.name}</h2>
+            <p className="sanic-stats">{this.props.stats}</p>
+            <a className="button button-3d-primary button-circle">GO!</a>
+          </div>
+        </div>
+      </div>)
+    }
   }
 }
 

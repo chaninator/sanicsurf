@@ -11,7 +11,6 @@ import WaitingPage from './components/WaitingPage';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import SanicRacer from './components/SanicRacer';
-
 import Admin from './components/Admin'
 
 import io from 'socket.io-client';
@@ -24,9 +23,19 @@ class App extends Component {
     this.state = {
       currentUser: null,
       start: false,
-      sanic: true,
-      chosenSanic: '1'
+      sanic: false,
+      chosenSanic: false
     }
+  }
+
+  changeSanic(data) {
+   this.setState({
+     chosenSanic: data,
+     sanic: true
+   }, ()=> {
+      socket.emit('vote', this.state.chosenSanic.sanic_id)
+    })
+
   }
 
   componentWillMount() {
@@ -60,53 +69,41 @@ class App extends Component {
 
   componentDidUpdate(prevState) {
   // only update chart if the data has changed
-  if (prevState.start !== this.state.start) {
-    this.sessionButton()
+    if (prevState.start !== this.state.start) {
+      this.sessionButton()
+    }
+
+    if (prevState.sanic !== this.state.sanic) {
+      this.sessionButton()
     }
   }
 
   sessionButton () {
     if (this.state.currentUser && this.state.start && this.state.sanic) {
-      return <SanicRacer chosenSanic={this.state.chosenSanic} />
+      return <SanicRacer {...this.state.chosenSanic} />
     } else if (this.state.currentUser && this.state.start) {
-      return <SanicSelect />
+      return <SanicSelect changeSanic={this.changeSanic.bind(this)} />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
-
     }
   }
 
-
-
   render() {
-
-    const xSanicRacer = () => {
-      console.log('xSanicRacer got called!')
-      return (
-        <SanicRacer />
-        )
-    }
-    // return (
-    //   <section>
-    //     {this.sessionButton()}
-    //   </section>
-    // )
 
     return (
         <Router>
-          <div>
             {this.sessionButton()}
-            <Route exact path="/" component={ LoginButton } />
-            <Route path="/admin" component={ Admin }/>
-            <Route path="/SanicRacer" component={ SanicRacer } />
-            <Route path="/SelectSanic" component={ SanicSelect } />
-            <Route path="/WaitingPage" component={ WaitingPage }/>
-          </div>
         </Router>
       )
   }
 }
 
 export default App
+
+            // <Route exact path="/" component={ LoginButton } />
+            // <Route path="/admin" component={ Admin }/>
+            // <Route path="/SanicRacer" component={ SanicRacer } />
+            // <Route path="/SelectSanic" component={ SanicSelect } />
+            // <Route path="/WaitingPage" component={ WaitingPage }/>
