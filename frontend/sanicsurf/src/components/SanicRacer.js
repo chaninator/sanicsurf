@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../../public/css/buttons.css';
 import './sanicracer.css';
 
 class SanicRacer extends Component {
@@ -41,15 +42,25 @@ class SanicRacer extends Component {
           <div className="col-sm-3 col-md-6 selected-sanic">
             <img className="sanic-profile" src={this.state.sanicUrl} alt="" />
             <h2 className="sanic-name">{this.state.sanicName}</h2>
-            <p className="sanic-stats">{this.state.sanicStats}</p>
-            <a className="button button-3d-primary button-circle">GO!</a>
+            <p className="sanic-stats">Likes: {this.state.sanicStats}</p>
+            <a className="button button-3d-caution button-circle">GO!</a>
           </div>
         </div>
       </div>
     )
     }
   else {
-
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-3"></div>
+        <div className="col-sm-3 col-md-6 selected-sanic">
+          <img className="sanic-profile" src={this.state.sanicUrl} alt="" />
+          <h2 className="sanic-name">{this.state.sanicName}</h2>
+          <p className="sanic-stats">Likes: {this.state.sanicStats}</p>
+          <a className="button button-3d-caution button-circle">GO!</a>
+        </div>
+      </div>
+    </div>
     }
   }
 }
