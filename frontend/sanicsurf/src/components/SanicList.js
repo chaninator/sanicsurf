@@ -11,9 +11,46 @@ class SanicList extends Component {
       chosenSanic: 'sanic'
     }
 }
-updateSanic(data){
+
+
+updateSanic0(){
   this.setState({
-    chosenSanic: data
+    chosenSanic: this.props.allSanics[0]
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+updateSanic1(){
+  this.setState({
+    chosenSanic: this.props.allSanics[1]
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+updateSanic2(){
+  this.setState({
+    chosenSanic: this.props.allSanics[2]
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+updateSanic3(){
+  this.setState({
+    chosenSanic: this.props.allSanics[3]
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+updateSanic4(){
+  this.setState({
+    chosenSanic: this.props.allSanics[4]
+  })
+  console.log('chosen sanic', this.state.chosenSanic)
+}
+
+updateSanic5(){
+  this.setState({
+    chosenSanic: this.props.allSanics[5]
   })
   console.log('chosen sanic', this.state.chosenSanic)
 }
@@ -49,15 +86,22 @@ componentWillMount() {
       return (
         <div className="sanic-select col-md-8">
           <div className="row">
-            {sanics[0]}
-            {/*<button onClick={this.updateSanic.bind(this)}>hello</button>*/}
-            <div>{sanics[1]}</div>
-            <div>{sanics[2]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic0.bind(this)}>{sanics[0]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic1.bind(this)}>{sanics[1]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic2.bind(this)}>{sanics[2]}</div>
           </div>
           <div className="row">
-            {sanics[3]}{sanics[4]}{sanics[5]}
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic3.bind(this)}>{sanics[3]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic4.bind(this)}>{sanics[4]}</div>
+
+            <div className="col-md-4 sanic" onClick={this.updateSanic5.bind(this)}>{sanics[5]}</div>
           </div>
-          <button onClick={this.changeSanic.bind(this)}>hey</button>
+          <button onClick={this.changeSanic.bind(this)}>Play</button>
         </div>
       )
 

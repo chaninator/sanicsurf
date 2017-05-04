@@ -20,7 +20,7 @@ class App extends Component {
     super(props)
     this.state = {
       currentUser: null,
-      start: true,
+      start: false,
       chosenSanic: ''
     }
   }
@@ -49,6 +49,7 @@ class App extends Component {
     })
   }
 
+
   loginButtonClicked (e) {
     e.preventDefault();
 
@@ -70,7 +71,7 @@ class App extends Component {
 
   sessionButton () {
     if (this.state.currentUser && this.state.start) {
-      return <SanicSelect changeSanic={this.changeSanic.bind(this)}/>
+      return <SanicSelect changeSanic={this.changeSanic.bind(this)} />
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {

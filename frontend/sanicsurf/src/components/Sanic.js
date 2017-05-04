@@ -31,9 +31,9 @@ class Sanic extends Component {
       )
     } else {
       return (
-        <div className="col-md-4 sanic" >
+      <a>
           <img src={this.props.url}/>
-        </div>
+      </a>
       )
     }
   }

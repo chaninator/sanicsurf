@@ -9,7 +9,7 @@ class SanicSelect extends Component {
     super(props);
 
     this.state = {
-      sanics: [],
+      sanics: []
     }
   }
 
@@ -27,6 +27,7 @@ class SanicSelect extends Component {
   componentDidMount() {
     this.getSanics();
     console.log('ssssssssanc', this.state)
+    console.log('CUUREENT', this.props.currentSanic)
   }
 
   render() {
@@ -51,7 +52,7 @@ class SanicSelect extends Component {
               <div className="container">
                 <div className="row character-select">
                   <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
-                  <SanicProfile/>
+                  <SanicProfile />
                 </div>
               </div>
             </div>
