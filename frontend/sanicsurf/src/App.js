@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import { Link, IndexLink, ReactRouter } from 'react-router';
@@ -21,7 +20,7 @@ class App extends Component {
     this.state = {
       currentUser: null,
       start: false,
-      chosenSanic: ''
+      chosenSanic: false
     }
   }
 
@@ -29,7 +28,7 @@ class App extends Component {
     this.setState({
       chosenSanic: data
     })
-    console.log('chosen status:', this.state.chosenSanic);
+    //console.log('chosen status:', this.state.chosenSanic);
   }
 
   componentWillMount() {
@@ -67,6 +66,9 @@ class App extends Component {
   if (prevState.start !== this.state.start) {
     this.sessionButton()
     }
+  if (prevState.chosenSanic !== this.state.chosenSanic) {
+      console.log('state of App.js chosenSanic', this.state.chosenSanic);
+      }
   }
 
   sessionButton () {
@@ -76,7 +78,6 @@ class App extends Component {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
       return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
-
     }
   }
 

@@ -1,0 +1,11 @@
+.login-background {
+  background-color: black;
+  height: fill;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.sanic-login {
+  justify-content: center;
+}

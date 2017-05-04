@@ -23,11 +23,9 @@ class Sanic extends Component {
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
       return (
-      <a href={sanicId}>
-        <div className="col-xs-6 sanic">
+
           <img src={this.props.url} />
-        </div>
-      </a>
+        
       )
     } else {
       return (
