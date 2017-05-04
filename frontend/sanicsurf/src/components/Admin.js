@@ -1,22 +1,50 @@
 import React, {Component} from 'react';
-import {Link, Redirect } from 'react-router';
-
+import {Link, Redirect} from 'react-router';
+import './admin.css';
 
 class Admin extends Component {
 
-  startGame(){
+  startGame() {
     console.log('Starting Game');
 
   }
 
-  render(){
-    return(
-      <div>
-          <h2>AdMAN</h2>
-          <p className='description'>U DA AD MAN</p>
-          <button onClick={()=> this.startGame()}><li><Link to="/SanicAdminSelect" activeClassName="active" className="navlink">Start</Link></li></button>
+  render() {
+    return (
+      <section className="admin-content">
+        <div className="container">
+          <div className="row rings">
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 start">
+              <Link to="/SanicAdminSelect" activeClassName="active" className="navlink">
+                <a className="start-btn" onClick={()  => this.startGame()}>START</a>
+              </Link>
+            </div>
+          </div>
+          <div className="row rings">
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+          </div>
+        </div>
 
-      </div>
+      </section>
     )
   }
 }
