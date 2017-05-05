@@ -11,8 +11,8 @@ import Admin from './components/Admin';
 import './App.css';
 
 import io from 'socket.io-client';
-
-const socket = io.connect(process.env.SOCKET_IO);
+//process.env.SOCKET_IO
+const socket = io.connect('http://localhost:3000');
 console.log('SOCKET:', socket)
 
 class App extends Component {

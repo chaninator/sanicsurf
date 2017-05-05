@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './admin.css';
 import io from 'socket.io-client';
-const socket = io.connect(process.env.SOCKET_IO);
+const socket = io.connect('http://localhost:3000');
 
 class Admin extends Component {
 
