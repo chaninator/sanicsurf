@@ -63,5 +63,15 @@
     background-color: #022AD4;
   }
 
+  .butn-container {
+    margin: 300px 0;
+    text-align: center;
+  }
+
+  .mobile-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 }

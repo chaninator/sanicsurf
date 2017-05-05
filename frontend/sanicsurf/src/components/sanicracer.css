@@ -99,5 +99,10 @@ body {
     background: 100vh;
     color: #022AD4;
   }
+}
 
+@media (max-width: 350px) {
+  .sanic-name {
+    font-size: 35px;
+  }
 }

@@ -14,7 +14,7 @@
 }
 
 .displayName {
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 .logoutBtn {
@@ -41,7 +41,15 @@
 
   .logoutBtn {
     text-align: center;
-    margin-top: 400px;
+    margin-top: 300px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 350px) {
+  .logoutBtn {
+    text-align: center;
+    margin-top: 250px;
     margin-bottom: 40px;
   }
 }
