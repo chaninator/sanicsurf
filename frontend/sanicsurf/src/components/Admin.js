@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router';
+import {Link} from 'react-router-dom';
 import './admin.css';
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
 
 class Admin extends Component {
 
   startGame() {
-    console.log('Starting Game');
+    socket.emit('start-game')
+  }
 
+  componentWillMount () {
+    var self = this
+    socket.emit('hello')
+    socket.on('start', function () {
+      self.setState({start: true})
+    })
   }
 
   render() {
@@ -25,9 +34,11 @@ class Admin extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-12 start">
-              <Link to="/SanicAdminSelect" activeClassName="active" className="navlink">
-                <a className="start-btn" onClick={()  => this.startGame()}>START</a>
+            <div className="col-md-12 start" activeClassName="active" className="navlink">
+              <Link to="/SanicAdminSelect" >
+                <a className="start-btn" onClick={()  => this.startGame()}>
+                  I AM THE GOD DAMN START BUTTON
+                </a>
               </Link>
             </div>
           </div>
@@ -50,3 +61,6 @@ class Admin extends Component {
 }
 
 export default Admin;
+
+// activeClassName="active" className="navlink"
+//        <a className="start-btn" onClick={()  => this.startGame()}>START</a>

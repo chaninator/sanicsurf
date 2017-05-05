@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import App from './App';
-//import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+import SanicLand from './components/SanicLand'
 
 
 
@@ -12,6 +13,6 @@ import NotFound from './components/NotFound';
 import Admin from './components/Admin';
 
 ReactDOM.render(
-  <App />,
+<SanicLand />,
   document.getElementById('root')
 );

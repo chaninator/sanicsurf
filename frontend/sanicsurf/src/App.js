@@ -51,6 +51,7 @@ class App extends Component {
     var self = this
     socket.emit('hello')
     socket.on('start', function () {
+      console.log('START NOTIFICATION RECEIVED FROM SERVER')
       self.setState({start: true})
     })
   }
@@ -93,9 +94,9 @@ class App extends Component {
   render() {
 
     return (
-        <Router>
+        <div>
             {this.sessionButton()}
-        </Router>
+        </div>
       )
   }
 }
