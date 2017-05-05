@@ -1,76 +1,122 @@
-import React, {Component} from 'react';
-import SanicList from './SanicList';
-import SanicProfile from './SanicProfile';
-import axios from 'axios';
-import './sanicselect.css';
+import React, { Component } from 'react';
+import RacerOne from './RacerOne';
+import RacerTwo from './RacerTwo';
+import RacerThree from './RacerThree';
+import RacerFour from './RacerFour';
+import RacerFive from './RacerFive';
+import RacerSix from './RacerSix';
+import './Race.css';
 
-class SanicSelect extends Component {
-  constructor(props) {
-    super(props);
 
+class SanicAdminSelect extends Component {
+  constructor(){
+    super();
     this.state = {
-      sanics: []
+      sanic1: 0,
+      sanic2: 0,
+      sanic3: 0,
+      sanic4: 0,
+      sanic5: 0,
+      sanic6: 0
     }
   }
 
-  getSanics() {
-    let self = this
-    axios.get('http://localhost:3000/api/sanics').then(function(response) {
-      console.log('the response: ', response.data.sanic);
-      self.setState({sanics: response.data.sanic});
-      console.log('SanicSelect State: ', self.state.sanics);
-    }).catch(function(err) {
-      console.log('a stupid error: ', err)
-    })
-  }
-
-  componentDidMount() {
-    this.getSanics();
-    console.log('ssssssssanc', this.state)
-    console.log('CUUREENT', this.props.currentSanic)
-  }
-
-  render() {
-    const isMobile = window.innerWidth <= 500;
-    if (isMobile) {
-      return (
-        <div className="inner">
-          <div className="container">
-            <div className="row">
-              <div className="col-xs-1"></div>
-              <div className="col-xs-10">
-                <h4 className="sanic-title">SANIC LAND</h4>
-              </div>
-            </div>
-            <div className="row character-select">
-              <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
-            </div>
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className="outer">
-        <div className="middle">
-          <div className="inner">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
-                  <h1 className="sanic-title">SANIC LAND</h1>
-                </div>
-              </div>
-              <div className="row character-select">
-                <div className="col-md-2"></div>
-                <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      )
-    }
+componentDidUpdate() {
+  if (this.state.sanic1 === 92) {
+    alert('Sanic Sanderson wins!');
+  } else if (this.state.sanic2 === 92) {
+    alert('Sanic Bronak wins!');
+  } else if (this.state.sanic3 === 92) {
+    alert('Sanak Singh wins!');
+  } else if (this.state.sanic4 === 92) {
+    alert('Sanic Speed wins!');
+  } else if (this.state.sanic5 === 92) {
+    alert('Sanic at the Disco wins!');
+  } else if (this.state.sanic6 === 92) {
+    alert('Sanic Attack wins!');
   }
 }
 
-export default SanicSelect;
+
+
+
+race1(){
+  this.setState({
+    sanic1: this.state.sanic1 + .5
+  })
+}
+
+race2(){
+  this.setState({
+    sanic2: this.state.sanic2 + .5
+  })
+}
+
+race3(){
+  this.setState({
+    sanic3: this.state.sanic3 + .5
+  })
+}
+
+race4(){
+  this.setState({
+    sanic4: this.state.sanic4 + .5
+  })
+}
+
+race5(){
+  this.setState({
+    sanic5: this.state.sanic5 + .5
+  })
+}
+
+race6(){
+  this.setState({
+    sanic6: this.state.sanic6 + .5
+  })
+}
+
+  render() {
+    return (
+
+      <div className="container">
+            <div className="row">
+              <div className="level-container cold-md-12">
+
+<div id="bg-scroll">
+<div>
+
+<RacerOne position={this.state.sanic1}/>
+<div></div>
+<RacerTwo position={this.state.sanic2}/>
+<div></div>
+<RacerThree position={this.state.sanic3}/>
+<div></div>
+<RacerFour position={this.state.sanic4}/>
+<div></div>
+<RacerFive position={this.state.sanic5}/>
+<div></div>
+<RacerSix position={this.state.sanic6}/>
+<div className="buttonblock">
+<button onClick={this.race1.bind(this)}>sanic 1</button>
+<button onClick={this.race2.bind(this)}>sanic 2</button>
+<button onClick={this.race3.bind(this)}>sanic 3</button>
+<button onClick={this.race4.bind(this)}>sanic 4</button>
+<button onClick={this.race5.bind(this)}>sanic 5</button>
+<button onClick={this.race6.bind(this)}>sanic 6</button>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+    );
+  }
+}
+
+export default SanicAdminSelect;
