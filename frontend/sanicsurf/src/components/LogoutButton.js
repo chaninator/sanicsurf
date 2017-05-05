@@ -14,7 +14,7 @@ class LogoutButton extends Component {
     } else {
       return (
         <div className="butn-container">
-          <a onClick={this.props.logoutButtonClicked} className="login-btn">{this.props.children}
+          <a onClick={this.props.logoutButtonClicked} className="logout-btn">{this.props.children}
           </a>
         </div>
       )
