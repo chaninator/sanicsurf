@@ -18,7 +18,7 @@ let style = {
       <div className="race">
         <div className="bitch" style={style}>
           </div>
-          <img src="http://i.imgur.com/Af4W6eJ.gif"/>
+          <img className="racer" src="http://i.imgur.com/Af4W6eJ.gif"/>
 
         {/*}<div className="sanic"></div>*/}
 

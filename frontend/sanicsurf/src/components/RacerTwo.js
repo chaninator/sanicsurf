@@ -18,7 +18,7 @@ let style = {
         <div className="bitch" style={style} >
           </div>
 
-        <img src="http://i.imgur.com/ZFGYvlL.gif"/>
+        <img className="racer" src="http://i.imgur.com/ZFGYvlL.gif"/>
 
 
           </div>
