@@ -9,14 +9,16 @@
 }
 
 .login-btn {
-  background-color: #022AD4;
-  color: white;
-  font-family: 'Schoolbell';
-  font-size: 50px;
-  padding: 25px 100px;
+  padding: 0 30px 10px 30px;
   border: 5px solid gold;
-  box-shadow: 5px 5px #022AD4;
-  border-radius: 2px;
+  font-size: 100px;
+  font-family: "VT323", Helvetica, sans-serif;
+  color: rgba(255,255,0,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 rgba(255,0,0,1);
+  background-color: #022AD4;
 }
 
 @keyframes rainbow {
@@ -36,14 +38,16 @@
 
 @media (max-width: 450px) {
   .login-btn {
-    background-color: #022AD4;
-    color: white;
-    font-family: 'Schoolbell';
-    font-size: 25px;
-    padding: 25px 20px;
+    padding: 10px 30px 20px 30px;
     border: 5px solid gold;
-    box-shadow: 5px 5px #022AD4;
-    border-radius: 2px;
+    font-size: 30px;
+    font-family: "VT323", Helvetica, sans-serif;
+    color: rgba(255,255,0,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-shadow: 3px 3px 0 rgba(255,0,0,1);
+    background-color: #022AD4;
   }
 
 

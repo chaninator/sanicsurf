@@ -55,8 +55,6 @@ class SanicList extends Component {
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
 
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
-          </div>
-          <div className="row">
 
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
 
@@ -76,8 +74,6 @@ class SanicList extends Component {
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
 
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
-          </div>
-          <div className="row">
 
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
 

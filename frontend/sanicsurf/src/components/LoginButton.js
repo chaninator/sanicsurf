@@ -6,7 +6,7 @@ class LoginButton extends Component {
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
       return (
-        <div className="btn-container">
+        <div className="butn-container">
           <a onClick={this.props.loginButtonClicked} className="login-btn">{this.props.children}
           </a>
         </div>

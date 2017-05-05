@@ -10,7 +10,6 @@ class WaitingPage extends Component {
     return(
     <div className="background">
       <div className="profile">
-
         <div className="info col-md-5">
           <p className="displayName"> { this.props.displayName } </p>
           <p className="waiting">  Waiting on game to begin... </p>
