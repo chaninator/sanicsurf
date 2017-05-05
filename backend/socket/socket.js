@@ -16,12 +16,22 @@ module.exports = function(server){
 
   }
 
-  io.on('connection', function(socket){
+  let started = false
+
+  io.on('connect', function(socket){
+    if (started) {
+      console.log('A user connected and the ')
+      socket.emit('start')
+    }
     console.log('a fucking computer connected via socket.io: ')
 
     // if admin sends start, broadcast start to others connected
      // io.on('start', function(){
-     setTimeout(function() {socket.emit('start')}, 500)
+    socket.on('start-game', () => {
+      started = true
+      io.emit('start')
+      console.log('Game start has been pressed')
+    })
     // })
 
     // listen for a vote from a user

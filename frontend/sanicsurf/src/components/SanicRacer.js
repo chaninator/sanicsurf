@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+import '../../public/css/buttons.css';
 //import axios from 'axios';
 import './sanicracer.css';
 //import { Link } from 'react-router-dom'
@@ -45,7 +47,7 @@ class SanicRacer extends Component {
           <div className="col-sm-3"></div>
           <div className="col-sm-3 col-md-6 selected-sanic">
             <img className="sanic-profile" src={this.props.url} alt="" />
-            <h2 className="sanic-name">{this.props.name}test</h2>
+            <h2 className="sanic-name">{this.props.name}</h2>
             <p className="sanic-stats">{this.props.stats}</p>
             <a className="button button-3d-primary button-circle">GO!</a>
           </div>
@@ -65,7 +67,8 @@ class SanicRacer extends Component {
             <a className="button button-3d-primary button-circle">GO!</a>
           </div>
         </div>
-      </div>)
+      </div>
+    )
     }
   }
 }

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 //import SanicProfile from './SanicProfile';
 import Sanic from './Sanic';
 
+
 class SanicList extends Component {
   constructor(props) {
     super(props);
@@ -71,8 +72,6 @@ class SanicList extends Component {
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
 
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
-          </div>
-          <div className="row">
 
             <div className="col-md-4 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
 

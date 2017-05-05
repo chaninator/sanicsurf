@@ -1,1 +1,60 @@
+.sanicball {
+  width: 50%;
+   display: block;
+   position: absolute;
+   /* ball animation */
+   -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+   -moz-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+   -o-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+   animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate ;
+ }
 
+ .sanicball2 {
+    width: 50%;
+    display: block;
+    position: absolute;
+    /* ball animation */
+    -webkit-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+    -moz-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+    -o-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+    animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate ;
+  }
+
+  .sanicball3 {
+    width: 50%;
+     display: block;
+     position: absolute;
+     /* ball animation */
+     -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+     -moz-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+     -o-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+     animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate ;
+   }
+
+ /* animation keyframes */
+ @-webkit-keyframes moveX {
+   /* screen width - width of image */
+   from { left: 0; } to { left: calc(100% - 145px); }
+ }
+ @-moz-keyframes moveX {
+   from { left: 0; } to { left: calc(100% - 145px); }
+ }
+ @-o-keyframes moveX {
+   from { left: 0; } to { left: calc(100% - 145px); }
+ }
+ @keyframes moveX {
+   from { left: 0; } to { left: calc(100% - 145px); }
+ }
+ @-webkit-keyframes moveY {
+   /* screen height - height of image */
+   from { top: calc(100% - 54px); } to { top: 0; }
+ }
+ @-moz-keyframes moveY {
+   from { top: calc(100% - 54px); } to { top: 0; }
+ }
+ @-o-keyframes moveY {
+   from { top: calc(100% - 54px); } to { top: 0; }
+ }
+ @keyframes moveY {
+   from { top: calc(100% - 54px); } to { top: 0; }
+ }

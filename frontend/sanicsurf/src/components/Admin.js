@@ -1,24 +1,66 @@
 import React, {Component} from 'react';
-import {Link, Redirect } from 'react-router';
-
+import {Link} from 'react-router-dom';
+import './admin.css';
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
 
 class Admin extends Component {
 
-  startGame(){
-    console.log('Starting Game');
-
+  startGame() {
+    socket.emit('start-game')
   }
 
-  render(){
-    return(
-      <div>
-          <h2>AdMAN</h2>
-          <p className='description'>U DA AD MAN</p>
-          <button onClick={()=> this.startGame()}><li><Link to="/SanicAdminSelect" activeClassName="active" className="navlink">Start</Link></li></button>
+  componentWillMount () {
+    var self = this
+    socket.emit('hello')
+    socket.on('start', function () {
+      self.setState({start: true})
+    })
+  }
 
-      </div>
+  render() {
+    return (
+      <section className="admin-content">
+        <div className="container">
+          <div className="row rings">
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 start" activeClassName="active" className="navlink">
+              <Link to="/SanicAdminSelect" >
+                <a className="start-btn" onClick={()  => this.startGame()}>
+                  I AM THE GOD DAMN START BUTTON
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="row rings">
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+            <div className="col-md-4">
+              <img src="https://media.giphy.com/media/HZzUOgwi1TdE4/giphy.gif"/>
+            </div>
+          </div>
+        </div>
+
+      </section>
     )
   }
 }
 
 export default Admin;
+
+// activeClassName="active" className="navlink"
+//        <a className="start-btn" onClick={()  => this.startGame()}>START</a>
