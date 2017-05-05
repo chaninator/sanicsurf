@@ -54,7 +54,7 @@ changeSanic(data) {
             <img className="sanic-profile" src={this.props.url} alt="" />
             <h2 className="sanic-name">{this.props.name}</h2>
             <p className="sanic-stats">{this.props.stats}</p>
-            <a className="button button-3d-primary button-circle">GO!</a>
+            <a onClick={this.changeSanic.bind(this)} className="button button-3d-primary button-circle">GO!</a>
           </div>
         </div>
       </div>

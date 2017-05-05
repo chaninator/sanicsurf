@@ -6,6 +6,9 @@ section {
   clear: left;
 }
 
+.opac-layer {
+  background-color: rgba(255, 255, 255, 0.5),
+}
 
 .buttonblock {
   clear: left;
@@ -18,8 +21,8 @@ section {
 }
 
 .racer {
-  width: 60px;
-  height: 100px;
+  max-width: 100px;
+  /*max-height: 100px;*/
   float: left;
 }
 
@@ -42,6 +45,7 @@ section {
 }
 
 .level-container {
-  border: 5px solid blue;
+  border: 10px solid blue;
   margin: 100px;
+  width: 80%;
 }

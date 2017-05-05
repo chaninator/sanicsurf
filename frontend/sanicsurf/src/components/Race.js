@@ -91,9 +91,8 @@ componentWillMount() {
       <div className="container">
         <div className="row">
           <div className="level-container cold-md-12">
-
             <div id="bg-scroll">
-              <div>
+              <div className="opac-layer">
 
                 <RacerOne position={this.state.sanic1}/>
                 <div></div>
