@@ -27,6 +27,7 @@ class SanicSelect extends Component {
   componentDidMount() {
     this.getSanics();
     console.log('ssssssssanc', this.state)
+    console.log('CUUREENT', this.props.currentSanic)
   }
 
   render() {
@@ -38,9 +39,9 @@ class SanicSelect extends Component {
             <div className="row">
               <div className="col-xs-1"></div>
               <div className="col-xs-10">
-              <h4 className="sanic-title">SANIC LAND</h4>
+                <h4 className="sanic-title">SANIC LAND</h4>
+              </div>
             </div>
-          </div>
             <div className="row character-select">
               <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
             </div>
@@ -50,24 +51,23 @@ class SanicSelect extends Component {
     } else {
       return (
         <div className="outer">
-          <div className="middle">
-            <div className="inner">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-3"></div>
-                  <div className="col-md-6">
-                    <h1 className="sanic-title">SANIC LAND</h1>
-                  </div>
+        <div className="middle">
+          <div className="inner">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-3"></div>
+                <div className="col-md-6">
+                  <h1 className="sanic-title">SANIC LAND</h1>
                 </div>
-
-                <div className="row character-select">
-                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
-                  <SanicProfile/>
-                </div>
+              </div>
+              <div className="row character-select">
+                <div className="col-md-2"></div>
+                <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
               </div>
             </div>
           </div>
         </div>
+      </div>
       )
     }
   }

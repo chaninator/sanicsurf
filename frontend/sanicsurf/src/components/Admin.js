@@ -34,7 +34,8 @@ class Admin extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6 start" activeClassName="active" className="navlink">
+            <div className="col-md-4"></div>
+            <div className="col-md-4 start">
               <Link to="/SanicAdminSelect" >
                 <a className="start-btn" onClick={()  => this.startGame()}>START</a>
               </Link>

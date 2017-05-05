@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../../public/css/buttons.css';
-//import axios from 'axios';
 import './sanicracer.css';
 //import { Link } from 'react-router-dom'
 
@@ -35,11 +34,9 @@ class SanicRacer extends Component {
   }
 
   render() {
-        console.log('im your fucking SANICRACER SUCCESS STORY')
-        console.log('data: ', this.props)
+    console.log('SANICRACER SUCCESS STORY')
+    console.log('data: ', this.props)
     const isMobile = window.innerWidth <= 500;
-
-
     if (isMobile) {
       return(
       <div className="container">
