@@ -34,11 +34,9 @@ class Admin extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-12 start" activeClassName="active" className="navlink">
+            <div className="col-md-6 start" activeClassName="active" className="navlink">
               <Link to="/SanicAdminSelect" >
-                <a className="start-btn" onClick={()  => this.startGame()}>
-                  I AM THE GOD DAMN START BUTTON
-                </a>
+                <a className="start-btn" onClick={()  => this.startGame()}>START</a>
               </Link>
             </div>
           </div>

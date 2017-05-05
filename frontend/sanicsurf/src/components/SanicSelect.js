@@ -41,7 +41,7 @@ class SanicSelect extends Component {
               <div className="col-xs-10">
               <h4 className="sanic-title">SANIC LAND</h4>
             </div>
-          </div>
+            </div>
             <div className="row character-select">
               <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
             </div>
