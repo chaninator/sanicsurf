@@ -7,7 +7,7 @@ import WaitingPage from './components/WaitingPage';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import SanicRacer from './components/SanicRacer';
-import Admin from './components/Admin'
+import Admin from './components/Admin';
 import './App.css';
 
 import io from 'socket.io-client';
