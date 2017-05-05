@@ -15,7 +15,7 @@ class SanicSelect extends Component {
 
   getSanics() {
     let self = this
-    axios.get('http://localhost:3000/api/sanics').then(function(response) {
+    axios.get(process.env.SOCKET_IO + '/api/sanics').then(function(response) {
       console.log('the response: ', response.data.sanic);
       self.setState({sanics: response.data.sanic});
       console.log('SanicSelect State: ', self.state.sanics);

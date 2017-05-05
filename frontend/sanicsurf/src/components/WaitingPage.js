@@ -54,5 +54,3 @@ class WaitingPage extends Component {
 }
 
 export default WaitingPage;
-
-//          {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
