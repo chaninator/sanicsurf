@@ -34,8 +34,13 @@ class SanicSelect extends Component {
     if (isMobile) {
       return (
         <div className="inner">
-          <h4 className="sanic-title">CCBBSANIC</h4>
           <div className="container">
+            <div className="row">
+              <div className="col-xs-1"></div>
+              <div className="col-xs-10">
+              <h4 className="sanic-title">SANIC LAND</h4>
+            </div>
+          </div>
             <div className="row character-select">
               <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
             </div>
@@ -47,10 +52,16 @@ class SanicSelect extends Component {
         <div className="outer">
           <div className="middle">
             <div className="inner">
-              <h1 className="sanic-title">CCBBSANIC</h1>
               <div className="container">
+                <div className="row">
+                  <div className="col-md-3"></div>
+                  <div className="col-md-6">
+                    <h1 className="sanic-title">SANIC LAND</h1>
+                  </div>
+                </div>
+
                 <div className="row character-select">
-                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic} />
+                  <SanicList allSanics={this.state.sanics} changeSanic={this.props.changeSanic}/>
                   <SanicProfile/>
                 </div>
               </div>

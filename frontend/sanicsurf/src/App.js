@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import { Link, IndexLink, ReactRouter } from 'react-router';
-import { firebase, auth } from './utils/firebase';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
+import React, {Component} from 'react';
+import {Link, IndexLink, ReactRouter} from 'react-router';
+import {firebase, auth} from './utils/firebase';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import SanicSelect from './components/SanicSelect';
 import WaitingPage from './components/WaitingPage';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import SanicRacer from './components/SanicRacer';
 import Admin from './components/Admin'
+import './App.css';
 
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:3000');
@@ -29,10 +26,10 @@ class App extends Component {
   }
 
   changeSanic(data) {
-   this.setState({
-     chosenSanic: data,
-     sanic: true
-   }, ()=> {
+    this.setState({
+      chosenSanic: data,
+      sanic: true
+    }, () => {
       socket.emit('vote', this.state.chosenSanic.sanic_id)
     })
 
@@ -42,33 +39,33 @@ class App extends Component {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         console.log('Logged in:', currentUser)
-        this.setState({ currentUser })
+        this.setState({currentUser})
       } else {
-        this.setState({ currentUser: null })
+        this.setState({currentUser: null})
       }
     })
 
     var self = this
     socket.emit('hello')
-    socket.on('start', function () {
+    socket.on('start', function() {
       self.setState({start: true})
     })
   }
 
-  loginButtonClicked (e) {
+  loginButtonClicked(e) {
     e.preventDefault();
 
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
 
-  logoutButtonClicked (e) {
+  logoutButtonClicked(e) {
     e.preventDefault()
     auth.signOut()
   }
 
   componentDidUpdate(prevState) {
-  // only update chart if the data has changed
+    // only update chart if the data has changed
     if (prevState.start !== this.state.start) {
       this.sessionButton()
     }
@@ -78,32 +75,39 @@ class App extends Component {
     }
   }
 
-  sessionButton () {
+  sessionButton() {
     if (this.state.currentUser && this.state.start && this.state.sanic) {
-      return <SanicRacer {...this.state.chosenSanic} />
+      return <SanicRacer {...this.state.chosenSanic}/>
     } else if (this.state.currentUser && this.state.start) {
-      return <SanicSelect changeSanic={this.changeSanic.bind(this)} />
+      return <SanicSelect changeSanic={this.changeSanic.bind(this)}/>
     } else if (this.state.currentUser) {
       return <WaitingPage displayName={this.state.currentUser.displayName} logoutButtonClicked={this.logoutButtonClicked}/>
     } else {
-      return <LoginButton loginButtonClicked={ this.loginButtonClicked }>Log in with Google</LoginButton>;
+      return (
+        <div>
+          <img className="sanicball" src="http://vignette4.wikia.nocookie.net/saszombieassault/images/a/a1/Sanic.gif/revision/latest?cb=20160323032702"/>
+          <img className="sanicball2" src="http://25.media.tumblr.com/tumblr_l5yps4R8qG1qa6wvao1_400.gif"/>
+          <img className="sanicball3" src="https://media0.giphy.com/media/JJ5z1Kf8GZhWU/giphy.gif"/>
+          <LoginButton loginButtonClicked={this.loginButtonClicked}>Log in with Google</LoginButton>
+        </div>
+      )
     }
   }
 
   render() {
 
     return (
-        <Router>
-            {this.sessionButton()}
-        </Router>
-      )
+      <Router>
+        {this.sessionButton()}
+      </Router>
+    )
   }
 }
 
 export default App
 
-            // <Route exact path="/" component={ LoginButton } />
-            // <Route path="/admin" component={ Admin }/>
-            // <Route path="/SanicRacer" component={ SanicRacer } />
-            // <Route path="/SelectSanic" component={ SanicSelect } />
-            // <Route path="/WaitingPage" component={ WaitingPage }/>
+// <Route exact path="/" component={ LoginButton } />
+// <Route path="/admin" component={ Admin }/>
+// <Route path="/SanicRacer" component={ SanicRacer } />
+// <Route path="/SelectSanic" component={ SanicSelect } />
+// <Route path="/WaitingPage" component={ WaitingPage }/> < LoginButton loginButtonClicked = {
