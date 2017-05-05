@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './Race.css';
 
 
-class RacerSix extends Component {
+class RacerTwo extends Component {
 
   render() {
 let style = {
@@ -17,10 +17,12 @@ let style = {
       <div className="race">
         <div className="bitch" style={style} >
           </div>
-        <img src="http://i.imgur.com/xqAtBQn.gif"/>
+
+        <img src="http://i.imgur.com/ZFGYvlL.gif"/>
 
 
           </div>
+
 
 
       </section>
@@ -28,4 +30,4 @@ let style = {
   }
 }
 
-export default RacerSix;
+export default RacerTwo;
