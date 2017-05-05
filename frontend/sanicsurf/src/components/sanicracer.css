@@ -7,9 +7,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 5px solid #022AD4;
+  border: 20px solid #022AD4;
   margin-top: 50px;
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.sanic-name {
+  padding: 0 30px 10px 30px;
+  font-size: 80px;
+  font-family: "VT323", Helvetica, sans-serif;
+  color: rgba(255,255,0,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  color: #022AD4;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 rgba(255,0,0,1);
+  background: 100vh;
+}
+
+.sanic-stats {
+  font-family: 'Fjalla One';
+  color: blue;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .button-circle {
@@ -60,9 +80,23 @@ body {
     margin-bottom: 20px;
   }
 
+  .sanic-stats {
+    font-family: 'Fjalla One';
+    color: blue;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
   .sanic-name {
-    font-family: 'Schoolbell';
-    font-size: 40px;
+    padding: 0 30px 10px 30px;
+    font-size: 50px;
+    font-family: "VT323", Helvetica, sans-serif;
+    color: rgba(255,255,0,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-shadow: 3px 3px 0 rgba(255,0,0,1);
+    background: 100vh;
     color: #022AD4;
   }
 

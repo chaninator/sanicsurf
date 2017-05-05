@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link, IndexLink, ReactRouter} from 'react-router';
 import {firebase, auth} from './utils/firebase';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import SanicSelect from './components/SanicSelect';
@@ -7,7 +6,8 @@ import WaitingPage from './components/WaitingPage';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import SanicRacer from './components/SanicRacer';
-import Admin from './components/Admin'
+import Admin from './components/Admin';
+import ReactAudioPlayer from 'react-audio-player';
 import './App.css';
 
 import io from 'socket.io-client';
@@ -46,7 +46,7 @@ class App extends Component {
 
     var self = this
     socket.emit('hello')
-    socket.on('start', function () {
+    socket.on('start', function() {
       console.log('START NOTIFICATION RECEIVED FROM SERVER')
 
       self.setState({start: true})
@@ -74,9 +74,9 @@ class App extends Component {
     if (prevState.sanic !== this.state.sanic) {
       this.sessionButton()
     }
-  if (prevState.chosenSanic !== this.state.chosenSanic) {
+    if (prevState.chosenSanic !== this.state.chosenSanic) {
       console.log('state of App.js chosenSanic', this.state.chosenSanic);
-      }
+    }
   }
 
   sessionButton() {
@@ -99,22 +99,13 @@ class App extends Component {
   }
 
   render() {
-
     return (
-
-        <div>
-            {this.sessionButton()}
-        </div>
-      )
-
+      <div>
+        {this.sessionButton()}
+        <ReactAudioPlayer src="http://www.soniczone0.com/games/sonic1/downloads/s1-ghz-bgm.mp3" autoPlay/>
+      </div>
+    )
   }
 }
 
-
 export default App
-
-// <Route exact path="/" component={ LoginButton } />
-// <Route path="/admin" component={ Admin }/>
-// <Route path="/SanicRacer" component={ SanicRacer } />
-// <Route path="/SelectSanic" component={ SanicSelect } />
-// <Route path="/WaitingPage" component={ WaitingPage }/> < LoginButton loginButtonClicked = {

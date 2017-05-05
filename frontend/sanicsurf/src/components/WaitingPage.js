@@ -12,47 +12,49 @@ class WaitingPage extends Component {
     if (isMobile) {
 
       return (
-      <div className="background">
-        <div className="profile">
-          <div className="info col-md-5">
-            <p className="displayName">
-              Welcome {this.props.displayName}!
-            </p>
-            <p className="waiting">
-              Waiting on game to begin...
-            </p>
-            <div className="logoutBtn">
-            <LogoutButton logoutButtonClicked={this.props.logoutButtonClicked}>Log out</LogoutButton>
-          </div>
-          </div>
-          <div className="loader col-md-2"><img src="./images/loading.gif" alt=""/></div>
-          <div className="space col-md-5"></div>
-        </div>
-      </div>
-      )
-    } else {
-      return (
         <div className="background">
           <div className="profile">
             <div className="info col-md-5">
               <p className="displayName">
-                {this.props.displayName}
+                Welcome {this.props.displayName}!
               </p>
               <p className="waiting">
                 Waiting on game to begin...
               </p>
-              <LogoutButton logoutButtonClicked={this.props.logoutButtonClicked}>Log out</LogoutButton>
+              <div className="logoutBtn">
+                <LogoutButton logoutButtonClicked={this.props.logoutButtonClicked}>Log out</LogoutButton>
+              </div>
             </div>
             <div className="loader col-md-2"><img src="./images/loading.gif" alt=""/></div>
-            <div className="space col-md-5"></div>
-            {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
           </div>
         </div>
+      )
+    } else {
+      return (
+        <section className="background">
+          <div className="profile">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-3"></div>
+                <div className="info col-md-6">
+                  <p className="displayName">
+                    Welcome {this.props.displayName}!
+                  </p>
+                  <p className="waiting">
+                    Waiting on game to begin...
+                  </p>
+                  <div className="loader"><img src="./images/loading.gif" alt=""/></div>
+                  <div className="logoutBtn">
+                    <LogoutButton logoutButtonClicked={this.props.logoutButtonClicked}>Log out</LogoutButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       )
     }
   }
 }
 
 export default WaitingPage;
-
-//          {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
