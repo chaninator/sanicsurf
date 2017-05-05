@@ -12,6 +12,10 @@
   text-align: center;
 }
 
-.info {
+.info {}
 
+@media (max-width: 450px) {
+  .background {
+    background-image: url("../../public/images/sanic-user-load.jpg");
+  }
 }
