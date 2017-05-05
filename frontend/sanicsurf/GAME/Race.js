@@ -5,10 +5,10 @@ import RacerThree from './RacerThree';
 import RacerFour from './RacerFour';
 import RacerFive from './RacerFive';
 import RacerSix from './RacerSix';
-import './App.css';
+import './Race.css';
 
 
-class App extends Component {
+class Race extends Component {
   constructor(){
     super();
     this.state = {
@@ -119,4 +119,4 @@ race6(){
   }
 }
 
-export default App;
+export default Race;
