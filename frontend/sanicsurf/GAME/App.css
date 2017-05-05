@@ -1,0 +1,47 @@
+body {
+  background-image: url(http://orig01.deviantart.net/98e1/f/2012/363/6/1/sonic_green_hill_zone_blocks_background____free_by_derpychii-d5pkdal.png);
+}
+
+section {
+  clear: left;
+}
+
+
+.buttonblock {
+  clear: left;
+}
+
+.bitch {
+  background-color: white;
+  opacity: 0;
+  float: left;
+}
+
+img {
+  width: 60px;
+  height: 100px;
+  float: left;
+}
+
+#bg-scroll {
+  height: 600px;
+  background: url(http://i.imgur.com/zi8pv3M.jpg);
+  -webkit-animation: backgroundScroll 15s linear infinite;
+  animation: backgroundScroll 15s linear infinite;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -5000px 0;}
+}
+
+@keyframes backgroundScroll {
+  from {background-position: 0 0;}
+  to {background-position: -5000px 0;}
+}
+
+.level-container {
+  border: 5px solid blue;
+  margin: 100px;
+}
