@@ -10,6 +10,7 @@ class WaitingPage extends Component {
 
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
+      return (
       <div className="background">
         <div className="profile">
           <div className="info col-md-5">
@@ -23,9 +24,9 @@ class WaitingPage extends Component {
           </div>
           <div className="loader col-md-2"><img src="./images/loading.gif" alt=""/></div>
           <div className="space col-md-5"></div>
-          {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
         </div>
       </div>
+      )
     } else {
       return (
         <div className="background">
@@ -50,3 +51,6 @@ class WaitingPage extends Component {
 }
 
 export default WaitingPage;
+
+//          {/*<Link to="/SanicProfileList" activeClasseName="active">SanicProfileList</Link>*/}
+
