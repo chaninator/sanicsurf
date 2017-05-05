@@ -43,18 +43,18 @@ class SanicList extends Component {
     const isMobile = window.innerWidth <= 500;
     if (isMobile) {
       return (
-        <div className="sanic-select-mobile">
-          <div className="row">
+        <div className="sanic-select-mobile col-xs-12">
+          <div className="row row1">
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[0])}>{sanics[0]}</div>
 
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[1])}>{sanics[1]}</div>
           </div>
-          <div className="row">
+          <div className="row row2">
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[2])}>{sanics[2]}</div>
 
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[3])}>{sanics[3]}</div>
           </div>
-          <div className="row">
+          <div className="row row3">
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[4])}>{sanics[4]}</div>
 
             <div className="col-xs-6 sanic" onClick={this.updateSanic.bind(this, this.props.allSanics[5])}>{sanics[5]}</div>

@@ -1,34 +1,34 @@
 .sanicball {
-  width: 50%;
-   display: block;
-   position: absolute;
-   /* ball animation */
-   -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
-   -moz-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
-   -o-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
-   animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate ;
+  width: 200px;
+  display: block;
+  position: absolute;
+  /* ball animation */
+  -webkit-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+  -moz-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+  -o-animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+  animation: moveX 3s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate ;
  }
 
  .sanicball2 {
-    width: 50%;
-    display: block;
-    position: absolute;
-    /* ball animation */
-    -webkit-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
-    -moz-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
-    -o-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
-    animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate ;
+  width: 200px;
+  display: block;
+  position: absolute;
+  /* ball animation */
+  -webkit-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  -moz-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  -o-animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate;
+  animation: moveX 4s linear 0s infinite alternate, moveY 3s linear 0s infinite alternate ;
   }
 
   .sanicball3 {
-    width: 50%;
-     display: block;
-     position: absolute;
-     /* ball animation */
-     -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-     -moz-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-     -o-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-     animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate ;
+    width: 200px;
+    display: block;
+    position: absolute;
+    /* ball animation */
+    -webkit-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -moz-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -o-animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    animation: moveX 6s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate ;
    }
 
  /* animation keyframes */
@@ -57,4 +57,14 @@
  }
  @keyframes moveY {
    from { top: calc(100% - 54px); } to { top: 0; }
+ }
+
+ .react-audio-player {
+   display: none;
+ }
+
+ @media (max-width: 450px) {
+  .sanicball, .sanicball2, .sanicball3 {
+    width: 125px;
+  }
  }
