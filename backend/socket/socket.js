@@ -21,7 +21,7 @@ module.exports = function(server){
   io.on('connect', function(socket){
     if (started) {
       console.log('A user connected and the ')
-      io.emit('start')
+      socket.emit('start')
     }
     console.log('a fucking computer connected via socket.io: ')
 
@@ -29,6 +29,7 @@ module.exports = function(server){
      // io.on('start', function(){
     socket.on('start-game', () => {
       started = true
+      io.emit('start')
       console.log('Game start has been pressed')
     })
     // })
