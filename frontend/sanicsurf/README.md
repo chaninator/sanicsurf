@@ -21,7 +21,7 @@
  ***
 
  ## User-Stories
- Johnny Banger is feeling down in life and needs a pick me up. Does he watch TV? Hang out with his friends? Or does he take a trip to Sanic Surf?
+ Johnny Banger is feeling down in life and needs a pick me up. Does he watch TV? Hang out with his friends? Or does he take a trip to Sanic Land?
 
  ## Wireframes
 
@@ -35,12 +35,6 @@
 
  <img src="http://i.imgur.com/DRMYYn7.jpg"
  alt="DANK WIREFRAMES BALSAMIQ" width="1280" height="720" border="10" />
-
-
-
-
-
-
 
 
 
