@@ -8,16 +8,22 @@ img {
 
 .sanic-select {
   border: 10px solid #022AD4;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-right: 100px;
   background-color: gold;
 }
 
 .sanic-select-mobile {
   display: none;
+}
+
+.sanic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sanic-display {
@@ -31,8 +37,6 @@ img {
 }
 
 .character-select {
-  display:flex;
-  flex-direction:row;
   margin-top: 100px;
 }
 
@@ -40,7 +44,7 @@ img {
   border: 5px solid #022AD4;
   height: 150px;
   max-width: 150px;
-  margin: 40px;
+  margin: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
