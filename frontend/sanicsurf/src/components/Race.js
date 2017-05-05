@@ -37,6 +37,15 @@ componentDidUpdate() {
   }
 }
 
+componentWillMount() {
+  var self = this
+  socket.on('move-sanic', function (vote) {
+    console.log('SANIC WILL MOVE!', vote)
+
+    {/*self.setState({start: true})*/}
+  })
+}
+
 
 
 
