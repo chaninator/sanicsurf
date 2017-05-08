@@ -22,7 +22,7 @@ module.exports = function(server){
       console.log('A user connected and the ')
       socket.emit('start')
     }
-    console.log('a fucking computer connected via socket.io: ')
+    console.log('a computer connected via socket.io: ')
 
     // if admin sends start, broadcast start to others connected
      // io.on('start', function(){

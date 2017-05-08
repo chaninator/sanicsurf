@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './admin.css';
 import io from 'socket.io-client';
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect('https://sanicsurf.herokuapp.com');
 
 class Admin extends Component {
 
