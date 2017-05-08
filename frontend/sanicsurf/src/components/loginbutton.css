@@ -1,4 +1,4 @@
-.login-btn:hover {
+.login-btn:hover, .logout-btn:hover {
   color: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   animation: rainbow .25s infinite;
   text-decoration: none;
@@ -21,6 +21,19 @@
   background-color: #022AD4;
 }
 
+.logout-btn {
+  padding: 0 20px 10px 20px;
+  border: 5px solid gold;
+  font-size: 50px;
+  font-family: "VT323", Helvetica, sans-serif;
+  color: rgba(255,255,0,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 5px 5px 0 rgba(255,0,0,1);
+  background-color: #022AD4;
+}
+
 @keyframes rainbow {
   0%, 100% { color: #FF0000; }
   16.66% { color: #FFFF00; }
@@ -29,7 +42,6 @@
   66.66% { color: #0000FF; }
   83.33% { color: #FF00FF; }
 }
-
 
 .butn-container {
   margin: 400px 0;
@@ -50,5 +62,15 @@
     background-color: #022AD4;
   }
 
+  .butn-container {
+    margin: 300px 0;
+    text-align: center;
+  }
+
+  .mobile-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 }

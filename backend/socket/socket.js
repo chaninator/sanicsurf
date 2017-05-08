@@ -35,11 +35,17 @@ module.exports = function(server){
 
     // listen for a vote from a user
     socket.on('vote', function(vote){
+      io.emit('person-voted', vote)
       // save the vote to the DB, then call updateVotes()
       // to send everything as an update
       //Votes.save(vote)
       console.log('vote value:', vote)
       //updateVotes()
+    })
+
+    socket.on('clicker', function(data){
+      console.log('click data:', data)
+      io.emit('move-sanic', data)
     })
 
     // when admin declares complete, send everybody results

@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../../public/css/buttons.css';
 import './sanicracer.css';
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
+console.log('SOCKET:', socket)
 //import { Link } from 'react-router-dom'
 
 class SanicRacer extends Component {
@@ -15,6 +18,11 @@ class SanicRacer extends Component {
       sanicName: ''
     }
   }
+
+changeSanic(data) {
+      socket.emit('clicker', this.props.sanic_id)
+    }
+
 
 
   componentWillMount(){
@@ -46,7 +54,7 @@ class SanicRacer extends Component {
             <img className="sanic-profile" src={this.props.url} alt="" />
             <h2 className="sanic-name">{this.props.name}</h2>
             <p className="sanic-stats">{this.props.stats}</p>
-            <a className="button button-3d-primary button-circle">GO!</a>
+            <a onClick={this.changeSanic.bind(this)} className="button button-3d-primary button-circle">GO!</a>
           </div>
         </div>
       </div>
@@ -61,7 +69,7 @@ class SanicRacer extends Component {
             <img className="sanic-profile" src={this.props.url} alt="" />
             <h2 className="sanic-name">{this.props.name}</h2>
             <p className="sanic-stats">{this.props.stats}</p>
-            <a className="button button-3d-primary button-circle">GO!</a>
+            <a onClick={this.changeSanic.bind(this)} className="button button-3d-primary button-circle">GO!</a>
           </div>
         </div>
       </div>

@@ -1,11 +1,24 @@
 .background {
-  background-image: url("http://abduzeedo.com/sites/default/files/originals/s/screen_shot_2011-12-20_at_10.58.04_pm.png");
+  background-image: url("../../public/images/sanic-user-load.jpg");
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
 .displayName, .waiting {
+  padding-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Fjalla One', sans-serif;
   color: white;
+}
+
+.displayName {
+  padding-top: 100px;
+}
+
+.logoutBtn {
+  text-align: center;
 }
 
 .loader {
@@ -16,7 +29,7 @@
 
 @media (max-width: 450px) {
   .background {
-    background-image: url("../../public/images/sanic-user-load.jpg");
+    background-image: url("../../public/images/sanic-user-load-mobile.jpg");
   }
 
   .displayName, .waiting {
@@ -28,7 +41,15 @@
 
   .logoutBtn {
     text-align: center;
-    margin-top: 400px;
+    margin-top: 300px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 350px) {
+  .logoutBtn {
+    text-align: center;
+    margin-top: 250px;
     margin-bottom: 40px;
   }
 }
