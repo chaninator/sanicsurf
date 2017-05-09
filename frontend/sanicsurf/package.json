@@ -2,6 +2,7 @@
   "name": "sanicsurf",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jonfranchi.github.io/SanicFrontend",
   "dependencies": {
     "axios": "^0.16.1",
     "dotenv": "^4.0.0",
@@ -18,13 +19,15 @@
     "react-scripts": "0.9.5"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start": "PORT=4000 react-scripts start",
+    "start": "react-scripts start",
     "devstart": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build&&gh-pages -d build"
   }
 }

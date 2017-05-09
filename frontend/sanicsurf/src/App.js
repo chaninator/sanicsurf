@@ -12,7 +12,7 @@ import './App.css';
 
 import io from 'socket.io-client';
 //process.env.SOCKET_IO
-const socket = io.connect('http://localhost:3000');
+const socket = io.connect('https://sanicsurf.herokuapp.com');
 console.log('SOCKET:', socket)
 
 class App extends Component {
